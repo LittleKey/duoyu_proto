@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package duoyu;
+option java_package = "me.littlekey.duoyu.model.proto";
+
+message LikeRequest {
+    string identity = 1;
+}
+
+message LikeResponse {
+    bool success = 1;
+    Errno errno = 2;
+    enum Errno {
+        ALREADY_LIKE = 0;
+    }
+}
+
+message UnlikeRequest {
+    string identity = 1;
+}
+
+message UnlikeResponse {
+    bool success = 1;
+    Errno errno = 2;
+    enum Errno {
+        NOT_LIKE = 0;
+    }
+}

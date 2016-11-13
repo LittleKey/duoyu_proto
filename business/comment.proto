@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package duoyu;
+option java_package = "me.littlekey.duoyu.model.proto";
+
+import "model/model.proto";
+import "comment.proto";
+import "business/public.proto";
+
+message GetDiaryCommentRequest {
+    string diary_id = 1;
+    comment.Cursor cursor = 2;
+}
+
+message GetCorrectCommentRequest {
+    string correct_id = 1;
+    comment.Cursor cursor = 2;
+}
+
+message GetCommentResponse {
+    repeated model.Comment comments = 1;
+    comment.Cursor cursor = 2;
+}
+
+message PutCommentRequest {
+    model.Comment comment = 1;
+}
+
+message PutCommentResponse {
+    bool success = 1;
+    model.Comment comment = 2;
+}
+
+message DeleteCommentRequest {
+    string comment_id = 1;
+}
+
+message DeleteCommentResponse {
+    bool success = 1;
+    Errno errno = 2;
+    enum Errno {
+        NOT_FOUND_COMMENT = 0;
+    }
+}
+
+service CommentService {
+    rpc getDiaryComment(GetDiaryCommentRequest) returns (GetCommentResponse);
+    rpc getCorrectComment(GetCorrectCommentRequest) returns (GetCommentResponse);
+    rpc likeComment(LikeRequest) returns (LikeResponse);
+    rpc unlikeComment(UnlikeRequest) returns (UnlikeResponse);
+    rpc putComment(PutCommentRequest) returns (PutCommentResponse);
+    rpc deleteComment(DeleteCommentRequest) returns (DeleteCommentResponse);
+}

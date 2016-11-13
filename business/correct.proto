@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package duoyu;
+option java_package = "me.littlekey.duoyu.model.proto";
+
+import "model/model.proto";
+import "comment.proto";
+import "business/public.proto";
+
+message CorrectedRequest {
+    comment.Cursor cursor = 1;
+}
+
+message GetCorrectedByUserIdRequest {
+    string user_id = 1;
+    comment.Cursor cursor = 2;
+}
+
+message CorrectedResponse {
+    repeated model.Correct corrects = 1;
+    comment.Cursor cursor = 2;
+}
+
+message PutCorrectRequest {
+    model.Correct correct = 1;
+}
+
+message PutCorrectResponse {
+    bool success = 1;
+    model.Correct correct = 2;
+}
+
+message DeleteCorrectRequest {
+    string correct_id = 1;
+}
+
+message DeleteCorrectResponse {
+    bool success = 1;
+    Errno errno = 2;
+    enum Errno {
+        NOT_FOUND_CORRECT = 0;
+    }
+}
+
+service CorrectService {
+    rpc userCorrecteds(CorrectedRequest) returns (CorrectedResponse);
+    rpc getCorrectedsByUserId(GetCorrectedByUserIdRequest) returns (CorrectedResponse);
+    rpc likeCorrect(LikeRequest) returns (LikeResponse);
+    rpc unlikeCorrect(UnlikeRequest) returns (UnlikeResponse);
+    rpc putCorrect(PutCorrectRequest) returns (PutCorrectResponse);
+    rpc deleteCorrect(DeleteCorrectRequest) returns (DeleteCorrectResponse);
+}

@@ -1,0 +1,91 @@
+syntax = "proto3";
+
+package model;
+option java_package = "me.littlekey.duoyu.model.proto";
+
+message Model {
+}
+
+enum Language {
+    CHINESE  = 0;
+    ENGLISH = 1;
+    JAPANESE = 2;
+    RUSSIAN = 3;
+    KOREAN = 4;
+}
+
+message User {
+    string user_id = 1;
+    string nickname = 2;
+    string email = 3;
+    string avatar = 4;
+    repeated Language native_language = 5;
+    repeated Language target_language = 6;
+    string region = 7;
+    string introduce = 8;
+    int32 following_num = 9;
+    int32 follower_num = 10;
+    int32 liked_num = 11;
+    int32 published_num = 12;
+    int32 corrected_num = 13;
+    Relationship relationship = 14;
+    enum Relationship {
+        NOT_FOLLOW = 0;
+        FOLLOWING = 1;
+        FOLLOWED = 2;
+        EACH_FOLLOW = 3;
+    }
+}
+
+message Profile {
+    string nickname = 1;
+    repeated Language native_language = 2;
+    repeated Language target_language = 3;
+    string region = 4;
+    string introduce = 5;
+    string avatar = 6;
+}
+
+message Diary {
+    string diary_id = 1;
+    string title = 2;
+    User author = 3;
+    Language language = 4;
+    string content = 5;
+    int32 date = 6;
+}
+
+message Correct {
+    string correct_id = 1;
+    string title = 2;
+    User author = 3;
+    Diary diary = 4;
+    Language language = 5;
+    string content = 6;
+    int32 date = 7;
+}
+
+message Comment {
+    string comment_id = 1;
+    Diary diary = 2;
+    Correct correct = 3;
+    User user = 4;
+    string content = 5;
+    int32 publish_date = 6;
+    int32 last_edit_date = 7;
+}
+
+message Happening {
+    string happening_id = 1;
+    User user = 2;
+    int32 date = 3;
+    string title = 4;
+    string content = 5;
+    Event event = 6;
+    enum Event {
+        LIKE_DIARY = 0;
+        LIKE_CORRECT = 1;
+        PUBLISH_DIARY = 2;
+        PUT_CORRECT = 3;
+    }
+}

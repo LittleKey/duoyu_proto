@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+package duoyu;
+option java_package = "me.littlekey.duoyu.model.proto";
+
+import "model/model.proto";
+import "comment.proto";
+import "business/public.proto";
+
+message HotRequest {
+    comment.Cursor cursor = 1;
+}
+
+message HotResponse {
+    repeated model.Diary diarys = 1;
+    comment.Cursor cursor = 2;
+}
+
+message RecentRequest {
+    comment.Cursor cursor = 1;
+}
+
+message RecentResponse {
+    repeated model.Diary diarys = 1;
+    comment.Cursor cursor = 2;
+}
+
+message PublishedRequest {
+    comment.Cursor cursor = 1;
+}
+
+message GetPublishedByUserIdRequest {
+    string user_id = 1;
+    comment.Cursor cursor = 2;
+}
+
+message PublishedResponse {
+    repeated model.Diary diarys = 1;
+    comment.Cursor cursor = 2;
+}
+
+message PutDiaryRequest {
+    model.Diary diary = 1;
+}
+
+message PutDiaryResponse {
+    bool success = 1;
+    model.Diary diary = 2;
+}
+
+message DeleteDiaryRequest {
+    string diary_id = 1;
+}
+
+message DeleteDiaryResponse {
+    bool success = 1;
+    Errno errno = 2;
+    enum Errno {
+        NOT_FOUND_DIARY = 0;
+    }
+}
+
+service DiaryService {
+    rpc hotDiarys(HotRequest) returns (HotResponse);
+    rpc recentDiarys(RecentRequest) returns (RecentResponse);
+    rpc publishedDiarys(PublishedRequest) returns (PublishedResponse);
+    rpc getPublishedDiarysByUserId(GetPublishedByUserIdRequest) returns (PublishedResponse);
+    rpc likeDiary(LikeRequest) returns (LikeResponse);
+    rpc unlikeDiary(UnlikeRequest) returns (UnlikeResponse);
+    rpc putDiary(PutDiaryRequest) returns (PutDiaryResponse);
+    rpc deleteDiary(DeleteDiaryRequest) returns (DeleteDiaryResponse);
+}

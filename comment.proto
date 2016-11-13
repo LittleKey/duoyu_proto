@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package comment;
+option java_package = "me.littlekey.duoyu.model.proto";
+
+message PrehashedPassword {
+    bytes prehashed_password = 1;
+    uint32 prehash_cycle = 2;
+}
+
+message Cursor {
+    int32 timestamp = 1;
+    int32 offset = 2;
+    int32 limit = 3;
+    bool has_more = 4;
+}
+
+message NullMessage {
+}

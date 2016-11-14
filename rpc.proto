@@ -1,0 +1,21 @@
+syntax = "proto3";
+package rpc;
+option java_package = "me.littlekey.duoyu.model.proto";
+
+
+message RPCRequest {
+    bytes session_id = 1;
+    bytes content = 2;
+    uint32 version = 3;
+}
+
+message RPCResponse {
+    bytes session_id = 1;
+    bool success = 2;
+    Reason reason = 3;
+    bytes content = 4;
+    enum Reason {
+        OK = 0;
+        BAD_REQUEST = 10;
+    }
+}

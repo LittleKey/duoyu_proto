@@ -27,7 +27,7 @@ public final class HotResponse extends Message<HotResponse, HotResponse.Builder>
       adapter = "me.littlekey.duoyu.model.proto.Diary#ADAPTER",
       label = WireField.Label.REPEATED
   )
-  public final List<Diary> diarys;
+  public final List<Diary> diaries;
 
   @WireField(
       tag = 2,
@@ -35,20 +35,20 @@ public final class HotResponse extends Message<HotResponse, HotResponse.Builder>
   )
   public final Cursor cursor;
 
-  public HotResponse(List<Diary> diarys, Cursor cursor) {
-    this(diarys, cursor, ByteString.EMPTY);
+  public HotResponse(List<Diary> diaries, Cursor cursor) {
+    this(diaries, cursor, ByteString.EMPTY);
   }
 
-  public HotResponse(List<Diary> diarys, Cursor cursor, ByteString unknownFields) {
+  public HotResponse(List<Diary> diaries, Cursor cursor, ByteString unknownFields) {
     super(ADAPTER, unknownFields);
-    this.diarys = Internal.immutableCopyOf("diarys", diarys);
+    this.diaries = Internal.immutableCopyOf("diaries", diaries);
     this.cursor = cursor;
   }
 
   @Override
   public Builder newBuilder() {
     Builder builder = new Builder();
-    builder.diarys = Internal.copyOf("diarys", diarys);
+    builder.diaries = Internal.copyOf("diaries", diaries);
     builder.cursor = cursor;
     builder.addUnknownFields(unknownFields());
     return builder;
@@ -60,7 +60,7 @@ public final class HotResponse extends Message<HotResponse, HotResponse.Builder>
     if (!(other instanceof HotResponse)) return false;
     HotResponse o = (HotResponse) other;
     return unknownFields().equals(o.unknownFields())
-        && diarys.equals(o.diarys)
+        && diaries.equals(o.diaries)
         && Internal.equals(cursor, o.cursor);
   }
 
@@ -69,7 +69,7 @@ public final class HotResponse extends Message<HotResponse, HotResponse.Builder>
     int result = super.hashCode;
     if (result == 0) {
       result = unknownFields().hashCode();
-      result = result * 37 + diarys.hashCode();
+      result = result * 37 + diaries.hashCode();
       result = result * 37 + (cursor != null ? cursor.hashCode() : 0);
       super.hashCode = result;
     }
@@ -79,23 +79,23 @@ public final class HotResponse extends Message<HotResponse, HotResponse.Builder>
   @Override
   public String toString() {
     StringBuilder builder = new StringBuilder();
-    if (!diarys.isEmpty()) builder.append(", diarys=").append(diarys);
+    if (!diaries.isEmpty()) builder.append(", diaries=").append(diaries);
     if (cursor != null) builder.append(", cursor=").append(cursor);
     return builder.replace(0, 2, "HotResponse{").append('}').toString();
   }
 
   public static final class Builder extends Message.Builder<HotResponse, Builder> {
-    public List<Diary> diarys;
+    public List<Diary> diaries;
 
     public Cursor cursor;
 
     public Builder() {
-      diarys = Internal.newMutableList();
+      diaries = Internal.newMutableList();
     }
 
-    public Builder diarys(List<Diary> diarys) {
-      Internal.checkElementsNotNull(diarys);
-      this.diarys = diarys;
+    public Builder diaries(List<Diary> diaries) {
+      Internal.checkElementsNotNull(diaries);
+      this.diaries = diaries;
       return this;
     }
 
@@ -106,7 +106,7 @@ public final class HotResponse extends Message<HotResponse, HotResponse.Builder>
 
     @Override
     public HotResponse build() {
-      return new HotResponse(diarys, cursor, super.buildUnknownFields());
+      return new HotResponse(diaries, cursor, super.buildUnknownFields());
     }
   }
 
@@ -117,14 +117,14 @@ public final class HotResponse extends Message<HotResponse, HotResponse.Builder>
 
     @Override
     public int encodedSize(HotResponse value) {
-      return Diary.ADAPTER.asRepeated().encodedSizeWithTag(1, value.diarys)
+      return Diary.ADAPTER.asRepeated().encodedSizeWithTag(1, value.diaries)
           + (value.cursor != null ? Cursor.ADAPTER.encodedSizeWithTag(2, value.cursor) : 0)
           + value.unknownFields().size();
     }
 
     @Override
     public void encode(ProtoWriter writer, HotResponse value) throws IOException {
-      Diary.ADAPTER.asRepeated().encodeWithTag(writer, 1, value.diarys);
+      Diary.ADAPTER.asRepeated().encodeWithTag(writer, 1, value.diaries);
       if (value.cursor != null) Cursor.ADAPTER.encodeWithTag(writer, 2, value.cursor);
       writer.writeBytes(value.unknownFields());
     }
@@ -135,7 +135,7 @@ public final class HotResponse extends Message<HotResponse, HotResponse.Builder>
       long token = reader.beginMessage();
       for (int tag; (tag = reader.nextTag()) != -1;) {
         switch (tag) {
-          case 1: builder.diarys.add(Diary.ADAPTER.decode(reader)); break;
+          case 1: builder.diaries.add(Diary.ADAPTER.decode(reader)); break;
           case 2: builder.cursor(Cursor.ADAPTER.decode(reader)); break;
           default: {
             FieldEncoding fieldEncoding = reader.peekFieldEncoding();
@@ -151,7 +151,7 @@ public final class HotResponse extends Message<HotResponse, HotResponse.Builder>
     @Override
     public HotResponse redact(HotResponse value) {
       Builder builder = value.newBuilder();
-      Internal.redactElements(builder.diarys, Diary.ADAPTER);
+      Internal.redactElements(builder.diaries, Diary.ADAPTER);
       if (builder.cursor != null) builder.cursor = Cursor.ADAPTER.redact(builder.cursor);
       builder.clearUnknownFields();
       return builder.build();

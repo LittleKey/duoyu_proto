@@ -12,7 +12,7 @@ message HotRequest {
 }
 
 message HotResponse {
-    repeated model.Diary diarys = 1;
+    repeated model.Diary diaries = 1;
     comment.Cursor cursor = 2;
 }
 
@@ -21,7 +21,7 @@ message RecentRequest {
 }
 
 message RecentResponse {
-    repeated model.Diary diarys = 1;
+    repeated model.Diary diaries = 1;
     comment.Cursor cursor = 2;
 }
 
@@ -35,7 +35,7 @@ message GetPublishedByUserIdRequest {
 }
 
 message PublishedResponse {
-    repeated model.Diary diarys = 1;
+    repeated model.Diary diaries = 1;
     comment.Cursor cursor = 2;
 }
 
@@ -61,10 +61,10 @@ message DeleteDiaryResponse {
 }
 
 service DiaryService {
-    rpc hotDiarys(HotRequest) returns (HotResponse);
-    rpc recentDiarys(RecentRequest) returns (RecentResponse);
-    rpc publishedDiarys(PublishedRequest) returns (PublishedResponse);
-    rpc getPublishedDiarysByUserId(GetPublishedByUserIdRequest) returns (PublishedResponse);
+    rpc hotDiaries(HotRequest) returns (HotResponse);
+    rpc recentDiaries(RecentRequest) returns (RecentResponse);
+    rpc publishedDiaries(PublishedRequest) returns (PublishedResponse);
+    rpc getPublishedDiariesByUserId(GetPublishedByUserIdRequest) returns (PublishedResponse);
     rpc likeDiary(LikeRequest) returns (LikeResponse);
     rpc unlikeDiary(UnlikeRequest) returns (UnlikeResponse);
     rpc putDiary(PutDiaryRequest) returns (PutDiaryResponse);

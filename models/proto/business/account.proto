@@ -35,6 +35,8 @@ message RegisterRequest {
     string avatar = 5;
     repeated model.Language native_languages = 6;
     repeated model.Language target_languages = 7;
+    string region = 8;
+    string introduce = 9;
 }
 
 message RegisterResponse {

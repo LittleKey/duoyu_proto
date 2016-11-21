@@ -19,8 +19,8 @@ message User {
     string nickname = 2;
     string email = 3;
     string avatar = 4;
-    repeated Language native_language = 5;
-    repeated Language target_language = 6;
+    repeated Language native_languages = 5;
+    repeated Language target_languages = 6;
     string region = 7;
     string introduce = 8;
     int32 following_num = 9;
@@ -34,13 +34,14 @@ message User {
         FOLLOWING = 1;
         FOLLOWED = 2;
         EACH_FOLLOW = 3;
+        SELF = 4;
     }
 }
 
 message Profile {
     string nickname = 1;
-    repeated Language native_language = 2;
-    repeated Language target_language = 3;
+    repeated Language native_languages = 2;
+    repeated Language target_languages = 3;
     string region = 4;
     string introduce = 5;
     string avatar = 6;

@@ -3,9 +3,9 @@ syntax = "proto3";
 package duoyu;
 option java_package = "me.littlekey.duoyu.model.proto";
 
-import "model/model.proto";
-import "common.proto";
-import "business/public.proto";
+import "models/proto/model/model.proto";
+import "models/proto/common.proto";
+import "models/proto/business/public.proto";
 
 message GetDiaryCommentRequest {
     string diary_id = 1;

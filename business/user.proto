@@ -4,7 +4,7 @@ package duoyu;
 option java_package = "me.littlekey.duoyu.model.proto";
 
 import "model/model.proto";
-import "comment.proto";
+import "common.proto";
 
 message CurrentRequest {
 }
@@ -57,7 +57,7 @@ message UnfollowResponse {
 
 message FollowerRequest {
     string user_id = 1;
-    comment.Cursor cursor = 2;
+    common.Cursor cursor = 2;
 }
 
 message FollowerResponse {
@@ -66,7 +66,7 @@ message FollowerResponse {
 
 message FollowingRequest {
     string user_id = 1;
-    comment.Cursor cursor = 2;
+    common.Cursor cursor = 2;
 }
 
 message FollowingResponse {
@@ -76,7 +76,7 @@ message FollowingResponse {
 message ChangePasswordRequest {
     string email = 1;
     string email_verification_code = 2;
-    comment.PrehashedPassword password = 3;
+    common.PrehashedPassword password = 3;
 }
 
 message ChangePasswordResponse {
@@ -89,12 +89,12 @@ message ChangePasswordResponse {
 }
 
 message TimelineRequest {
-    comment.Cursor cursor = 1;
+    common.Cursor cursor = 1;
 }
 
 message GetTimelineByUserIdRequest {
     string user_id = 1;
-    comment.Cursor cursor = 2;
+    common.Cursor cursor = 2;
 }
 
 message TimelineResponse {

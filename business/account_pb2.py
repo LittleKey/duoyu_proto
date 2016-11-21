@@ -14,16 +14,16 @@ _sym_db = _symbol_database.Default()
 
 
 from model import model_pb2 as model_dot_model__pb2
-import comment_pb2 as comment__pb2
+import common_pb2 as common__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='business/account.proto',
   package='duoyu',
   syntax='proto3',
-  serialized_pb=_b('\n\x16\x62usiness/account.proto\x12\x05\x64uoyu\x1a\x11model/model.proto\x1a\rcomment.proto\"K\n\x0cLoginRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12,\n\x08password\x18\x02 \x01(\x0b\x32\x1a.comment.PrehashedPassword\"\x94\x01\n\rLoginResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12)\n\x05\x65rrno\x18\x02 \x01(\x0e\x32\x1a.duoyu.LoginResponse.Errno\x12\x19\n\x04user\x18\x03 \x01(\x0b\x32\x0b.model.User\",\n\x05\x45rrno\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x16\n\x12INVALID_CREDENTIAL\x10\x01\"\x0f\n\rLogoutRequest\"\x10\n\x0eLogoutResponse\"\xe5\x01\n\x0fRegisterRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12,\n\x08password\x18\x02 \x01(\x0b\x32\x1a.comment.PrehashedPassword\x12\x1f\n\x17\x65mail_verification_code\x18\x03 \x01(\t\x12\x10\n\x08nickname\x18\x04 \x01(\t\x12\x0e\n\x06\x61vatar\x18\x05 \x01(\t\x12(\n\x0fnative_language\x18\x06 \x03(\x0e\x32\x0f.model.Language\x12(\n\x0ftarget_language\x18\x07 \x03(\x0e\x32\x0f.model.Language\"\xd4\x01\n\x10RegisterResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12,\n\x05\x65rrno\x18\x02 \x01(\x0e\x32\x1d.duoyu.RegisterResponse.Errno\x12\x19\n\x04user\x18\x03 \x01(\x0b\x32\x0b.model.User\"f\n\x05\x45rrno\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x10\n\x0c\x45MAIL_IN_USE\x10\x01\x12\x16\n\x12INVALID_EMAIL_CODE\x10\x02\x12\x12\n\x0eLANGUAGE_EMPTY\x10\x03\x12\x12\n\x0eNICKNAME_EMPTY\x10\x04\"#\n\x12\x45mailVerifyRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\"\x99\x01\n\x13\x45mailVerifyResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12/\n\x05\x65rrno\x18\x02 \x01(\x0e\x32 .duoyu.EmailVerifyResponse.Errno\"@\n\x05\x45rrno\x12\x11\n\rINVALID_EMAIL\x10\x00\x12\x0e\n\nRATE_LIMIT\x10\x01\x12\x14\n\x10\x44\x41ILY_RATE_LIMIT\x10\x02\x32\x88\x02\n\x0e\x41\x63\x63ountService\x12\x37\n\nemailLogin\x12\x13.duoyu.LoginRequest\x1a\x14.duoyu.LoginResponse\x12\x35\n\x06logout\x12\x14.duoyu.LogoutRequest\x1a\x15.duoyu.LogoutResponse\x12@\n\remailRegister\x12\x16.duoyu.RegisterRequest\x1a\x17.duoyu.RegisterResponse\x12\x44\n\x0b\x65mailVerify\x12\x19.duoyu.EmailVerifyRequest\x1a\x1a.duoyu.EmailVerifyResponseB \n\x1eme.littlekey.duoyu.model.protob\x06proto3')
+  serialized_pb=_b('\n\x16\x62usiness/account.proto\x12\x05\x64uoyu\x1a\x11model/model.proto\x1a\x0c\x63ommon.proto\"J\n\x0cLoginRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12+\n\x08password\x18\x02 \x01(\x0b\x32\x19.common.PrehashedPassword\"\x94\x01\n\rLoginResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12)\n\x05\x65rrno\x18\x02 \x01(\x0e\x32\x1a.duoyu.LoginResponse.Errno\x12\x19\n\x04user\x18\x03 \x01(\x0b\x32\x0b.model.User\",\n\x05\x45rrno\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x16\n\x12INVALID_CREDENTIAL\x10\x01\"\x0f\n\rLogoutRequest\"\x10\n\x0eLogoutResponse\"\xe4\x01\n\x0fRegisterRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12+\n\x08password\x18\x02 \x01(\x0b\x32\x19.common.PrehashedPassword\x12\x1f\n\x17\x65mail_verification_code\x18\x03 \x01(\t\x12\x10\n\x08nickname\x18\x04 \x01(\t\x12\x0e\n\x06\x61vatar\x18\x05 \x01(\t\x12(\n\x0fnative_language\x18\x06 \x03(\x0e\x32\x0f.model.Language\x12(\n\x0ftarget_language\x18\x07 \x03(\x0e\x32\x0f.model.Language\"\xd4\x01\n\x10RegisterResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12,\n\x05\x65rrno\x18\x02 \x01(\x0e\x32\x1d.duoyu.RegisterResponse.Errno\x12\x19\n\x04user\x18\x03 \x01(\x0b\x32\x0b.model.User\"f\n\x05\x45rrno\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x10\n\x0c\x45MAIL_IN_USE\x10\x01\x12\x16\n\x12INVALID_EMAIL_CODE\x10\x02\x12\x12\n\x0eLANGUAGE_EMPTY\x10\x03\x12\x12\n\x0eNICKNAME_EMPTY\x10\x04\"#\n\x12\x45mailVerifyRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\"\x99\x01\n\x13\x45mailVerifyResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12/\n\x05\x65rrno\x18\x02 \x01(\x0e\x32 .duoyu.EmailVerifyResponse.Errno\"@\n\x05\x45rrno\x12\x11\n\rINVALID_EMAIL\x10\x00\x12\x0e\n\nRATE_LIMIT\x10\x01\x12\x14\n\x10\x44\x41ILY_RATE_LIMIT\x10\x02\x32\x88\x02\n\x0e\x41\x63\x63ountService\x12\x37\n\nemailLogin\x12\x13.duoyu.LoginRequest\x1a\x14.duoyu.LoginResponse\x12\x35\n\x06logout\x12\x14.duoyu.LogoutRequest\x1a\x15.duoyu.LogoutResponse\x12@\n\remailRegister\x12\x16.duoyu.RegisterRequest\x1a\x17.duoyu.RegisterResponse\x12\x44\n\x0b\x65mailVerify\x12\x19.duoyu.EmailVerifyRequest\x1a\x1a.duoyu.EmailVerifyResponseB \n\x1eme.littlekey.duoyu.model.protob\x06proto3')
   ,
-  dependencies=[model_dot_model__pb2.DESCRIPTOR,comment__pb2.DESCRIPTOR,])
+  dependencies=[model_dot_model__pb2.DESCRIPTOR,common__pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 
@@ -45,8 +45,8 @@ _LOGINRESPONSE_ERRNO = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=249,
-  serialized_end=293,
+  serialized_start=247,
+  serialized_end=291,
 )
 _sym_db.RegisterEnumDescriptor(_LOGINRESPONSE_ERRNO)
 
@@ -79,8 +79,8 @@ _REGISTERRESPONSE_ERRNO = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=673,
-  serialized_end=775,
+  serialized_start=670,
+  serialized_end=772,
 )
 _sym_db.RegisterEnumDescriptor(_REGISTERRESPONSE_ERRNO)
 
@@ -105,8 +105,8 @@ _EMAILVERIFYRESPONSE_ERRNO = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=904,
-  serialized_end=968,
+  serialized_start=901,
+  serialized_end=965,
 )
 _sym_db.RegisterEnumDescriptor(_EMAILVERIFYRESPONSE_ERRNO)
 
@@ -144,8 +144,8 @@ _LOGINREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=67,
-  serialized_end=142,
+  serialized_start=66,
+  serialized_end=140,
 )
 
 
@@ -190,8 +190,8 @@ _LOGINRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=145,
-  serialized_end=293,
+  serialized_start=143,
+  serialized_end=291,
 )
 
 
@@ -214,8 +214,8 @@ _LOGOUTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=295,
-  serialized_end=310,
+  serialized_start=293,
+  serialized_end=308,
 )
 
 
@@ -238,8 +238,8 @@ _LOGOUTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=312,
-  serialized_end=328,
+  serialized_start=310,
+  serialized_end=326,
 )
 
 
@@ -311,8 +311,8 @@ _REGISTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=331,
-  serialized_end=560,
+  serialized_start=329,
+  serialized_end=557,
 )
 
 
@@ -357,8 +357,8 @@ _REGISTERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=563,
-  serialized_end=775,
+  serialized_start=560,
+  serialized_end=772,
 )
 
 
@@ -388,8 +388,8 @@ _EMAILVERIFYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=777,
-  serialized_end=812,
+  serialized_start=774,
+  serialized_end=809,
 )
 
 
@@ -427,15 +427,15 @@ _EMAILVERIFYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=815,
-  serialized_end=968,
+  serialized_start=812,
+  serialized_end=965,
 )
 
-_LOGINREQUEST.fields_by_name['password'].message_type = comment__pb2._PREHASHEDPASSWORD
+_LOGINREQUEST.fields_by_name['password'].message_type = common__pb2._PREHASHEDPASSWORD
 _LOGINRESPONSE.fields_by_name['errno'].enum_type = _LOGINRESPONSE_ERRNO
 _LOGINRESPONSE.fields_by_name['user'].message_type = model_dot_model__pb2._USER
 _LOGINRESPONSE_ERRNO.containing_type = _LOGINRESPONSE
-_REGISTERREQUEST.fields_by_name['password'].message_type = comment__pb2._PREHASHEDPASSWORD
+_REGISTERREQUEST.fields_by_name['password'].message_type = common__pb2._PREHASHEDPASSWORD
 _REGISTERREQUEST.fields_by_name['native_language'].enum_type = model_dot_model__pb2._LANGUAGE
 _REGISTERREQUEST.fields_by_name['target_language'].enum_type = model_dot_model__pb2._LANGUAGE
 _REGISTERRESPONSE.fields_by_name['errno'].enum_type = _REGISTERRESPONSE_ERRNO

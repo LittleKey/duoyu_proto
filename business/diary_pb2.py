@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 from model import model_pb2 as model_dot_model__pb2
-import comment_pb2 as comment__pb2
+import common_pb2 as common__pb2
 from business import public_pb2 as business_dot_public__pb2
 
 
@@ -22,9 +22,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='business/diary.proto',
   package='duoyu',
   syntax='proto3',
-  serialized_pb=_b('\n\x14\x62usiness/diary.proto\x12\x05\x64uoyu\x1a\x11model/model.proto\x1a\rcomment.proto\x1a\x15\x62usiness/public.proto\"-\n\nHotRequest\x12\x1f\n\x06\x63ursor\x18\x01 \x01(\x0b\x32\x0f.comment.Cursor\"M\n\x0bHotResponse\x12\x1d\n\x07\x64iaries\x18\x01 \x03(\x0b\x32\x0c.model.Diary\x12\x1f\n\x06\x63ursor\x18\x02 \x01(\x0b\x32\x0f.comment.Cursor\"0\n\rRecentRequest\x12\x1f\n\x06\x63ursor\x18\x01 \x01(\x0b\x32\x0f.comment.Cursor\"P\n\x0eRecentResponse\x12\x1d\n\x07\x64iaries\x18\x01 \x03(\x0b\x32\x0c.model.Diary\x12\x1f\n\x06\x63ursor\x18\x02 \x01(\x0b\x32\x0f.comment.Cursor\"3\n\x10PublishedRequest\x12\x1f\n\x06\x63ursor\x18\x01 \x01(\x0b\x32\x0f.comment.Cursor\"O\n\x1bGetPublishedByUserIdRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x1f\n\x06\x63ursor\x18\x02 \x01(\x0b\x32\x0f.comment.Cursor\"S\n\x11PublishedResponse\x12\x1d\n\x07\x64iaries\x18\x01 \x03(\x0b\x32\x0c.model.Diary\x12\x1f\n\x06\x63ursor\x18\x02 \x01(\x0b\x32\x0f.comment.Cursor\".\n\x0fPutDiaryRequest\x12\x1b\n\x05\x64iary\x18\x01 \x01(\x0b\x32\x0c.model.Diary\"@\n\x10PutDiaryResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x1b\n\x05\x64iary\x18\x02 \x01(\x0b\x32\x0c.model.Diary\"&\n\x12\x44\x65leteDiaryRequest\x12\x10\n\x08\x64iary_id\x18\x01 \x01(\t\"u\n\x13\x44\x65leteDiaryResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12/\n\x05\x65rrno\x18\x02 \x01(\x0e\x32 .duoyu.DeleteDiaryResponse.Errno\"\x1c\n\x05\x45rrno\x12\x13\n\x0fNOT_FOUND_DIARY\x10\x00\x32\x9a\x04\n\x0c\x44iaryService\x12\x33\n\nhotDiaries\x12\x11.duoyu.HotRequest\x1a\x12.duoyu.HotResponse\x12<\n\rrecentDiaries\x12\x14.duoyu.RecentRequest\x1a\x15.duoyu.RecentResponse\x12\x45\n\x10publishedDiaries\x12\x17.duoyu.PublishedRequest\x1a\x18.duoyu.PublishedResponse\x12[\n\x1bgetPublishedDiariesByUserId\x12\".duoyu.GetPublishedByUserIdRequest\x1a\x18.duoyu.PublishedResponse\x12\x34\n\tlikeDiary\x12\x12.duoyu.LikeRequest\x1a\x13.duoyu.LikeResponse\x12:\n\x0bunlikeDiary\x12\x14.duoyu.UnlikeRequest\x1a\x15.duoyu.UnlikeResponse\x12;\n\x08putDiary\x12\x16.duoyu.PutDiaryRequest\x1a\x17.duoyu.PutDiaryResponse\x12\x44\n\x0b\x64\x65leteDiary\x12\x19.duoyu.DeleteDiaryRequest\x1a\x1a.duoyu.DeleteDiaryResponseB \n\x1eme.littlekey.duoyu.model.protob\x06proto3')
+  serialized_pb=_b('\n\x14\x62usiness/diary.proto\x12\x05\x64uoyu\x1a\x11model/model.proto\x1a\x0c\x63ommon.proto\x1a\x15\x62usiness/public.proto\",\n\nHotRequest\x12\x1e\n\x06\x63ursor\x18\x01 \x01(\x0b\x32\x0e.common.Cursor\"L\n\x0bHotResponse\x12\x1d\n\x07\x64iaries\x18\x01 \x03(\x0b\x32\x0c.model.Diary\x12\x1e\n\x06\x63ursor\x18\x02 \x01(\x0b\x32\x0e.common.Cursor\"/\n\rRecentRequest\x12\x1e\n\x06\x63ursor\x18\x01 \x01(\x0b\x32\x0e.common.Cursor\"O\n\x0eRecentResponse\x12\x1d\n\x07\x64iaries\x18\x01 \x03(\x0b\x32\x0c.model.Diary\x12\x1e\n\x06\x63ursor\x18\x02 \x01(\x0b\x32\x0e.common.Cursor\"2\n\x10PublishedRequest\x12\x1e\n\x06\x63ursor\x18\x01 \x01(\x0b\x32\x0e.common.Cursor\"N\n\x1bGetPublishedByUserIdRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x1e\n\x06\x63ursor\x18\x02 \x01(\x0b\x32\x0e.common.Cursor\"R\n\x11PublishedResponse\x12\x1d\n\x07\x64iaries\x18\x01 \x03(\x0b\x32\x0c.model.Diary\x12\x1e\n\x06\x63ursor\x18\x02 \x01(\x0b\x32\x0e.common.Cursor\".\n\x0fPutDiaryRequest\x12\x1b\n\x05\x64iary\x18\x01 \x01(\x0b\x32\x0c.model.Diary\"@\n\x10PutDiaryResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x1b\n\x05\x64iary\x18\x02 \x01(\x0b\x32\x0c.model.Diary\"&\n\x12\x44\x65leteDiaryRequest\x12\x10\n\x08\x64iary_id\x18\x01 \x01(\t\"u\n\x13\x44\x65leteDiaryResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12/\n\x05\x65rrno\x18\x02 \x01(\x0e\x32 .duoyu.DeleteDiaryResponse.Errno\"\x1c\n\x05\x45rrno\x12\x13\n\x0fNOT_FOUND_DIARY\x10\x00\x32\x9a\x04\n\x0c\x44iaryService\x12\x33\n\nhotDiaries\x12\x11.duoyu.HotRequest\x1a\x12.duoyu.HotResponse\x12<\n\rrecentDiaries\x12\x14.duoyu.RecentRequest\x1a\x15.duoyu.RecentResponse\x12\x45\n\x10publishedDiaries\x12\x17.duoyu.PublishedRequest\x1a\x18.duoyu.PublishedResponse\x12[\n\x1bgetPublishedDiariesByUserId\x12\".duoyu.GetPublishedByUserIdRequest\x1a\x18.duoyu.PublishedResponse\x12\x34\n\tlikeDiary\x12\x12.duoyu.LikeRequest\x1a\x13.duoyu.LikeResponse\x12:\n\x0bunlikeDiary\x12\x14.duoyu.UnlikeRequest\x1a\x15.duoyu.UnlikeResponse\x12;\n\x08putDiary\x12\x16.duoyu.PutDiaryRequest\x1a\x17.duoyu.PutDiaryResponse\x12\x44\n\x0b\x64\x65leteDiary\x12\x19.duoyu.DeleteDiaryRequest\x1a\x1a.duoyu.DeleteDiaryResponseB \n\x1eme.littlekey.duoyu.model.protob\x06proto3')
   ,
-  dependencies=[model_dot_model__pb2.DESCRIPTOR,comment__pb2.DESCRIPTOR,business_dot_public__pb2.DESCRIPTOR,])
+  dependencies=[model_dot_model__pb2.DESCRIPTOR,common__pb2.DESCRIPTOR,business_dot_public__pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 
@@ -42,8 +42,8 @@ _DELETEDIARYRESPONSE_ERRNO = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=808,
-  serialized_end=836,
+  serialized_start=800,
+  serialized_end=828,
 )
 _sym_db.RegisterEnumDescriptor(_DELETEDIARYRESPONSE_ERRNO)
 
@@ -74,8 +74,8 @@ _HOTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=88,
-  serialized_end=133,
+  serialized_start=87,
+  serialized_end=131,
 )
 
 
@@ -112,8 +112,8 @@ _HOTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=135,
-  serialized_end=212,
+  serialized_start=133,
+  serialized_end=209,
 )
 
 
@@ -143,8 +143,8 @@ _RECENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=214,
-  serialized_end=262,
+  serialized_start=211,
+  serialized_end=258,
 )
 
 
@@ -181,8 +181,8 @@ _RECENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=264,
-  serialized_end=344,
+  serialized_start=260,
+  serialized_end=339,
 )
 
 
@@ -212,8 +212,8 @@ _PUBLISHEDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=346,
-  serialized_end=397,
+  serialized_start=341,
+  serialized_end=391,
 )
 
 
@@ -250,8 +250,8 @@ _GETPUBLISHEDBYUSERIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=399,
-  serialized_end=478,
+  serialized_start=393,
+  serialized_end=471,
 )
 
 
@@ -288,8 +288,8 @@ _PUBLISHEDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=480,
-  serialized_end=563,
+  serialized_start=473,
+  serialized_end=555,
 )
 
 
@@ -319,8 +319,8 @@ _PUTDIARYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=565,
-  serialized_end=611,
+  serialized_start=557,
+  serialized_end=603,
 )
 
 
@@ -357,8 +357,8 @@ _PUTDIARYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=613,
-  serialized_end=677,
+  serialized_start=605,
+  serialized_end=669,
 )
 
 
@@ -388,8 +388,8 @@ _DELETEDIARYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=679,
-  serialized_end=717,
+  serialized_start=671,
+  serialized_end=709,
 )
 
 
@@ -427,20 +427,20 @@ _DELETEDIARYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=719,
-  serialized_end=836,
+  serialized_start=711,
+  serialized_end=828,
 )
 
-_HOTREQUEST.fields_by_name['cursor'].message_type = comment__pb2._CURSOR
+_HOTREQUEST.fields_by_name['cursor'].message_type = common__pb2._CURSOR
 _HOTRESPONSE.fields_by_name['diaries'].message_type = model_dot_model__pb2._DIARY
-_HOTRESPONSE.fields_by_name['cursor'].message_type = comment__pb2._CURSOR
-_RECENTREQUEST.fields_by_name['cursor'].message_type = comment__pb2._CURSOR
+_HOTRESPONSE.fields_by_name['cursor'].message_type = common__pb2._CURSOR
+_RECENTREQUEST.fields_by_name['cursor'].message_type = common__pb2._CURSOR
 _RECENTRESPONSE.fields_by_name['diaries'].message_type = model_dot_model__pb2._DIARY
-_RECENTRESPONSE.fields_by_name['cursor'].message_type = comment__pb2._CURSOR
-_PUBLISHEDREQUEST.fields_by_name['cursor'].message_type = comment__pb2._CURSOR
-_GETPUBLISHEDBYUSERIDREQUEST.fields_by_name['cursor'].message_type = comment__pb2._CURSOR
+_RECENTRESPONSE.fields_by_name['cursor'].message_type = common__pb2._CURSOR
+_PUBLISHEDREQUEST.fields_by_name['cursor'].message_type = common__pb2._CURSOR
+_GETPUBLISHEDBYUSERIDREQUEST.fields_by_name['cursor'].message_type = common__pb2._CURSOR
 _PUBLISHEDRESPONSE.fields_by_name['diaries'].message_type = model_dot_model__pb2._DIARY
-_PUBLISHEDRESPONSE.fields_by_name['cursor'].message_type = comment__pb2._CURSOR
+_PUBLISHEDRESPONSE.fields_by_name['cursor'].message_type = common__pb2._CURSOR
 _PUTDIARYREQUEST.fields_by_name['diary'].message_type = model_dot_model__pb2._DIARY
 _PUTDIARYRESPONSE.fields_by_name['diary'].message_type = model_dot_model__pb2._DIARY
 _DELETEDIARYRESPONSE.fields_by_name['errno'].enum_type = _DELETEDIARYRESPONSE_ERRNO

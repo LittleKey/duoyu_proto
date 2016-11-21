@@ -4,21 +4,21 @@ package duoyu;
 option java_package = "me.littlekey.duoyu.model.proto";
 
 import "model/model.proto";
-import "comment.proto";
+import "common.proto";
 import "business/public.proto";
 
 message CorrectedRequest {
-    comment.Cursor cursor = 1;
+    common.Cursor cursor = 1;
 }
 
 message GetCorrectedByUserIdRequest {
     string user_id = 1;
-    comment.Cursor cursor = 2;
+    common.Cursor cursor = 2;
 }
 
 message CorrectedResponse {
     repeated model.Correct corrects = 1;
-    comment.Cursor cursor = 2;
+    common.Cursor cursor = 2;
 }
 
 message PutCorrectRequest {

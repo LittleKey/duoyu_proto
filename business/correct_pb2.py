@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 from model import model_pb2 as model_dot_model__pb2
-import comment_pb2 as comment__pb2
+import common_pb2 as common__pb2
 from business import public_pb2 as business_dot_public__pb2
 
 
@@ -22,9 +22,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='business/correct.proto',
   package='duoyu',
   syntax='proto3',
-  serialized_pb=_b('\n\x16\x62usiness/correct.proto\x12\x05\x64uoyu\x1a\x11model/model.proto\x1a\rcomment.proto\x1a\x15\x62usiness/public.proto\"3\n\x10\x43orrectedRequest\x12\x1f\n\x06\x63ursor\x18\x01 \x01(\x0b\x32\x0f.comment.Cursor\"O\n\x1bGetCorrectedByUserIdRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x1f\n\x06\x63ursor\x18\x02 \x01(\x0b\x32\x0f.comment.Cursor\"V\n\x11\x43orrectedResponse\x12 \n\x08\x63orrects\x18\x01 \x03(\x0b\x32\x0e.model.Correct\x12\x1f\n\x06\x63ursor\x18\x02 \x01(\x0b\x32\x0f.comment.Cursor\"4\n\x11PutCorrectRequest\x12\x1f\n\x07\x63orrect\x18\x01 \x01(\x0b\x32\x0e.model.Correct\"F\n\x12PutCorrectResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x1f\n\x07\x63orrect\x18\x02 \x01(\x0b\x32\x0e.model.Correct\"*\n\x14\x44\x65leteCorrectRequest\x12\x12\n\ncorrect_id\x18\x01 \x01(\t\"{\n\x15\x44\x65leteCorrectResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x31\n\x05\x65rrno\x18\x02 \x01(\x0e\x32\".duoyu.DeleteCorrectResponse.Errno\"\x1e\n\x05\x45rrno\x12\x15\n\x11NOT_FOUND_CORRECT\x10\x00\x32\xb1\x03\n\x0e\x43orrectService\x12\x43\n\x0euserCorrecteds\x12\x17.duoyu.CorrectedRequest\x1a\x18.duoyu.CorrectedResponse\x12U\n\x15getCorrectedsByUserId\x12\".duoyu.GetCorrectedByUserIdRequest\x1a\x18.duoyu.CorrectedResponse\x12\x36\n\x0blikeCorrect\x12\x12.duoyu.LikeRequest\x1a\x13.duoyu.LikeResponse\x12<\n\runlikeCorrect\x12\x14.duoyu.UnlikeRequest\x1a\x15.duoyu.UnlikeResponse\x12\x41\n\nputCorrect\x12\x18.duoyu.PutCorrectRequest\x1a\x19.duoyu.PutCorrectResponse\x12J\n\rdeleteCorrect\x12\x1b.duoyu.DeleteCorrectRequest\x1a\x1c.duoyu.DeleteCorrectResponseB \n\x1eme.littlekey.duoyu.model.protob\x06proto3')
+  serialized_pb=_b('\n\x16\x62usiness/correct.proto\x12\x05\x64uoyu\x1a\x11model/model.proto\x1a\x0c\x63ommon.proto\x1a\x15\x62usiness/public.proto\"2\n\x10\x43orrectedRequest\x12\x1e\n\x06\x63ursor\x18\x01 \x01(\x0b\x32\x0e.common.Cursor\"N\n\x1bGetCorrectedByUserIdRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x1e\n\x06\x63ursor\x18\x02 \x01(\x0b\x32\x0e.common.Cursor\"U\n\x11\x43orrectedResponse\x12 \n\x08\x63orrects\x18\x01 \x03(\x0b\x32\x0e.model.Correct\x12\x1e\n\x06\x63ursor\x18\x02 \x01(\x0b\x32\x0e.common.Cursor\"4\n\x11PutCorrectRequest\x12\x1f\n\x07\x63orrect\x18\x01 \x01(\x0b\x32\x0e.model.Correct\"F\n\x12PutCorrectResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x1f\n\x07\x63orrect\x18\x02 \x01(\x0b\x32\x0e.model.Correct\"*\n\x14\x44\x65leteCorrectRequest\x12\x12\n\ncorrect_id\x18\x01 \x01(\t\"{\n\x15\x44\x65leteCorrectResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x31\n\x05\x65rrno\x18\x02 \x01(\x0e\x32\".duoyu.DeleteCorrectResponse.Errno\"\x1e\n\x05\x45rrno\x12\x15\n\x11NOT_FOUND_CORRECT\x10\x00\x32\xb1\x03\n\x0e\x43orrectService\x12\x43\n\x0euserCorrecteds\x12\x17.duoyu.CorrectedRequest\x1a\x18.duoyu.CorrectedResponse\x12U\n\x15getCorrectedsByUserId\x12\".duoyu.GetCorrectedByUserIdRequest\x1a\x18.duoyu.CorrectedResponse\x12\x36\n\x0blikeCorrect\x12\x12.duoyu.LikeRequest\x1a\x13.duoyu.LikeResponse\x12<\n\runlikeCorrect\x12\x14.duoyu.UnlikeRequest\x1a\x15.duoyu.UnlikeResponse\x12\x41\n\nputCorrect\x12\x18.duoyu.PutCorrectRequest\x1a\x19.duoyu.PutCorrectResponse\x12J\n\rdeleteCorrect\x12\x1b.duoyu.DeleteCorrectRequest\x1a\x1c.duoyu.DeleteCorrectResponseB \n\x1eme.littlekey.duoyu.model.protob\x06proto3')
   ,
-  dependencies=[model_dot_model__pb2.DESCRIPTOR,comment__pb2.DESCRIPTOR,business_dot_public__pb2.DESCRIPTOR,])
+  dependencies=[model_dot_model__pb2.DESCRIPTOR,common__pb2.DESCRIPTOR,business_dot_public__pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 
@@ -42,8 +42,8 @@ _DELETECORRECTRESPONSE_ERRNO = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=575,
-  serialized_end=605,
+  serialized_start=571,
+  serialized_end=601,
 )
 _sym_db.RegisterEnumDescriptor(_DELETECORRECTRESPONSE_ERRNO)
 
@@ -74,8 +74,8 @@ _CORRECTEDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=90,
-  serialized_end=141,
+  serialized_start=89,
+  serialized_end=139,
 )
 
 
@@ -112,8 +112,8 @@ _GETCORRECTEDBYUSERIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=143,
-  serialized_end=222,
+  serialized_start=141,
+  serialized_end=219,
 )
 
 
@@ -150,8 +150,8 @@ _CORRECTEDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=224,
-  serialized_end=310,
+  serialized_start=221,
+  serialized_end=306,
 )
 
 
@@ -181,8 +181,8 @@ _PUTCORRECTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=312,
-  serialized_end=364,
+  serialized_start=308,
+  serialized_end=360,
 )
 
 
@@ -219,8 +219,8 @@ _PUTCORRECTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=366,
-  serialized_end=436,
+  serialized_start=362,
+  serialized_end=432,
 )
 
 
@@ -250,8 +250,8 @@ _DELETECORRECTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=438,
-  serialized_end=480,
+  serialized_start=434,
+  serialized_end=476,
 )
 
 
@@ -289,14 +289,14 @@ _DELETECORRECTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=482,
-  serialized_end=605,
+  serialized_start=478,
+  serialized_end=601,
 )
 
-_CORRECTEDREQUEST.fields_by_name['cursor'].message_type = comment__pb2._CURSOR
-_GETCORRECTEDBYUSERIDREQUEST.fields_by_name['cursor'].message_type = comment__pb2._CURSOR
+_CORRECTEDREQUEST.fields_by_name['cursor'].message_type = common__pb2._CURSOR
+_GETCORRECTEDBYUSERIDREQUEST.fields_by_name['cursor'].message_type = common__pb2._CURSOR
 _CORRECTEDRESPONSE.fields_by_name['corrects'].message_type = model_dot_model__pb2._CORRECT
-_CORRECTEDRESPONSE.fields_by_name['cursor'].message_type = comment__pb2._CURSOR
+_CORRECTEDRESPONSE.fields_by_name['cursor'].message_type = common__pb2._CURSOR
 _PUTCORRECTREQUEST.fields_by_name['correct'].message_type = model_dot_model__pb2._CORRECT
 _PUTCORRECTRESPONSE.fields_by_name['correct'].message_type = model_dot_model__pb2._CORRECT
 _DELETECORRECTRESPONSE.fields_by_name['errno'].enum_type = _DELETECORRECTRESPONSE_ERRNO

@@ -4,22 +4,22 @@ package duoyu;
 option java_package = "me.littlekey.duoyu.model.proto";
 
 import "model/model.proto";
-import "comment.proto";
+import "common.proto";
 import "business/public.proto";
 
 message GetDiaryCommentRequest {
     string diary_id = 1;
-    comment.Cursor cursor = 2;
+    common.Cursor cursor = 2;
 }
 
 message GetCorrectCommentRequest {
     string correct_id = 1;
-    comment.Cursor cursor = 2;
+    common.Cursor cursor = 2;
 }
 
 message GetCommentResponse {
     repeated model.Comment comments = 1;
-    comment.Cursor cursor = 2;
+    common.Cursor cursor = 2;
 }
 
 message PutCommentRequest {

@@ -14,16 +14,16 @@ _sym_db = _symbol_database.Default()
 
 
 from model import model_pb2 as model_dot_model__pb2
-import comment_pb2 as comment__pb2
+import common_pb2 as common__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='business/user.proto',
   package='duoyu',
   syntax='proto3',
-  serialized_pb=_b('\n\x13\x62usiness/user.proto\x12\x05\x64uoyu\x1a\x11model/model.proto\x1a\rcomment.proto\"\x10\n\x0e\x43urrentRequest\"=\n\x0f\x43urrentResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x19\n\x04user\x18\x02 \x01(\x0b\x32\x0b.model.User\"%\n\x12GetUserByIdRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"\x8f\x01\n\x13GetUserByIdResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x19\n\x04user\x18\x02 \x01(\x0b\x32\x0b.model.User\x12/\n\x05\x65rrno\x18\x03 \x01(\x0e\x32 .duoyu.GetUserByIdResponse.Errno\"\x1b\n\x05\x45rrno\x12\x12\n\x0eUSER_NOT_FOUND\x10\x00\" \n\rFollowRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"\xb1\x01\n\x0e\x46ollowResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12.\n\x0crelationship\x18\x02 \x01(\x0e\x32\x18.model.User.Relationship\x12*\n\x05\x65rrno\x18\x03 \x01(\x0e\x32\x1b.duoyu.FollowResponse.Errno\"2\n\x05\x45rrno\x12\x12\n\x0eUSER_NOT_FOUND\x10\x00\x12\x15\n\x11\x41LREADY_FOLLOWING\x10\x01\"\"\n\x0fUnfollowRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"\xb1\x01\n\x10UnfollowResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12.\n\x0crelationship\x18\x02 \x01(\x0e\x32\x18.model.User.Relationship\x12,\n\x05\x65rrno\x18\x03 \x01(\x0e\x32\x1d.duoyu.UnfollowResponse.Errno\".\n\x05\x45rrno\x12\x12\n\x0eUSER_NOT_FOUND\x10\x00\x12\x11\n\rNOT_FOLLOWING\x10\x01\"C\n\x0f\x46ollowerRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x1f\n\x06\x63ursor\x18\x02 \x01(\x0b\x32\x0f.comment.Cursor\".\n\x10\x46ollowerResponse\x12\x1a\n\x05users\x18\x01 \x03(\x0b\x32\x0b.model.User\"D\n\x10\x46ollowingRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x1f\n\x06\x63ursor\x18\x02 \x01(\x0b\x32\x0f.comment.Cursor\"/\n\x11\x46ollowingResponse\x12\x1a\n\x05users\x18\x01 \x03(\x0b\x32\x0b.model.User\"u\n\x15\x43hangePasswordRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x1f\n\x17\x65mail_verification_code\x18\x02 \x01(\t\x12,\n\x08password\x18\x03 \x01(\x0b\x32\x1a.comment.PrehashedPassword\"\x8b\x01\n\x16\x43hangePasswordResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x32\n\x05\x65rrno\x18\x02 \x01(\x0e\x32#.duoyu.ChangePasswordResponse.Errno\",\n\x05\x45rrno\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x16\n\x12INVALID_EMAIL_CODE\x10\x01\"2\n\x0fTimelineRequest\x12\x1f\n\x06\x63ursor\x18\x01 \x01(\x0b\x32\x0f.comment.Cursor\"N\n\x1aGetTimelineByUserIdRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x1f\n\x06\x63ursor\x18\x02 \x01(\x0b\x32\x0f.comment.Cursor\"8\n\x10TimelineResponse\x12$\n\nhappenings\x18\x01 \x03(\x0b\x32\x10.model.Happening\"#\n\x12UploadImageRequest\x12\r\n\x05image\x18\x01 \x01(\x0c\"\xa8\x01\n\x13UploadImageResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x10\n\x08image_id\x18\x02 \x01(\t\x12/\n\x05\x65rrno\x18\x03 \x01(\x0e\x32 .duoyu.UploadImageResponse.Errno\"=\n\x05\x45rrno\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x13\n\x0fIMAGE_TOO_LARGE\x10\x01\x12\x12\n\x0eUPLOAD_FAILURE\x10\x02\x32\xbb\x05\n\x0bUserService\x12<\n\x0b\x63urrentUser\x12\x15.duoyu.CurrentRequest\x1a\x16.duoyu.CurrentResponse\x12\x44\n\x0bgetUserById\x12\x19.duoyu.GetUserByIdRequest\x1a\x1a.duoyu.GetUserByIdResponse\x12\x39\n\nfollowUser\x12\x14.duoyu.FollowRequest\x1a\x15.duoyu.FollowResponse\x12?\n\x0cunfollowUser\x12\x16.duoyu.UnfollowRequest\x1a\x17.duoyu.UnfollowResponse\x12?\n\x0c\x66ollowerList\x12\x16.duoyu.FollowerRequest\x1a\x17.duoyu.FollowerResponse\x12\x42\n\rfollowingList\x12\x17.duoyu.FollowingRequest\x1a\x18.duoyu.FollowingResponse\x12M\n\x0e\x63hangePassword\x12\x1c.duoyu.ChangePasswordRequest\x1a\x1d.duoyu.ChangePasswordResponse\x12?\n\x0cUserTimeline\x12\x16.duoyu.TimelineRequest\x1a\x17.duoyu.TimelineResponse\x12Q\n\x13GetTimelineByUserId\x12!.duoyu.GetTimelineByUserIdRequest\x1a\x17.duoyu.TimelineResponse\x12\x44\n\x0buploadImage\x12\x19.duoyu.UploadImageRequest\x1a\x1a.duoyu.UploadImageResponseB \n\x1eme.littlekey.duoyu.model.protob\x06proto3')
+  serialized_pb=_b('\n\x13\x62usiness/user.proto\x12\x05\x64uoyu\x1a\x11model/model.proto\x1a\x0c\x63ommon.proto\"\x10\n\x0e\x43urrentRequest\"=\n\x0f\x43urrentResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x19\n\x04user\x18\x02 \x01(\x0b\x32\x0b.model.User\"%\n\x12GetUserByIdRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"\x8f\x01\n\x13GetUserByIdResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x19\n\x04user\x18\x02 \x01(\x0b\x32\x0b.model.User\x12/\n\x05\x65rrno\x18\x03 \x01(\x0e\x32 .duoyu.GetUserByIdResponse.Errno\"\x1b\n\x05\x45rrno\x12\x12\n\x0eUSER_NOT_FOUND\x10\x00\" \n\rFollowRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"\xb1\x01\n\x0e\x46ollowResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12.\n\x0crelationship\x18\x02 \x01(\x0e\x32\x18.model.User.Relationship\x12*\n\x05\x65rrno\x18\x03 \x01(\x0e\x32\x1b.duoyu.FollowResponse.Errno\"2\n\x05\x45rrno\x12\x12\n\x0eUSER_NOT_FOUND\x10\x00\x12\x15\n\x11\x41LREADY_FOLLOWING\x10\x01\"\"\n\x0fUnfollowRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"\xb1\x01\n\x10UnfollowResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12.\n\x0crelationship\x18\x02 \x01(\x0e\x32\x18.model.User.Relationship\x12,\n\x05\x65rrno\x18\x03 \x01(\x0e\x32\x1d.duoyu.UnfollowResponse.Errno\".\n\x05\x45rrno\x12\x12\n\x0eUSER_NOT_FOUND\x10\x00\x12\x11\n\rNOT_FOLLOWING\x10\x01\"B\n\x0f\x46ollowerRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x1e\n\x06\x63ursor\x18\x02 \x01(\x0b\x32\x0e.common.Cursor\".\n\x10\x46ollowerResponse\x12\x1a\n\x05users\x18\x01 \x03(\x0b\x32\x0b.model.User\"C\n\x10\x46ollowingRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x1e\n\x06\x63ursor\x18\x02 \x01(\x0b\x32\x0e.common.Cursor\"/\n\x11\x46ollowingResponse\x12\x1a\n\x05users\x18\x01 \x03(\x0b\x32\x0b.model.User\"t\n\x15\x43hangePasswordRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x1f\n\x17\x65mail_verification_code\x18\x02 \x01(\t\x12+\n\x08password\x18\x03 \x01(\x0b\x32\x19.common.PrehashedPassword\"\x8b\x01\n\x16\x43hangePasswordResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x32\n\x05\x65rrno\x18\x02 \x01(\x0e\x32#.duoyu.ChangePasswordResponse.Errno\",\n\x05\x45rrno\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x16\n\x12INVALID_EMAIL_CODE\x10\x01\"1\n\x0fTimelineRequest\x12\x1e\n\x06\x63ursor\x18\x01 \x01(\x0b\x32\x0e.common.Cursor\"M\n\x1aGetTimelineByUserIdRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x1e\n\x06\x63ursor\x18\x02 \x01(\x0b\x32\x0e.common.Cursor\"8\n\x10TimelineResponse\x12$\n\nhappenings\x18\x01 \x03(\x0b\x32\x10.model.Happening\"#\n\x12UploadImageRequest\x12\r\n\x05image\x18\x01 \x01(\x0c\"\xa8\x01\n\x13UploadImageResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x10\n\x08image_id\x18\x02 \x01(\t\x12/\n\x05\x65rrno\x18\x03 \x01(\x0e\x32 .duoyu.UploadImageResponse.Errno\"=\n\x05\x45rrno\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x13\n\x0fIMAGE_TOO_LARGE\x10\x01\x12\x12\n\x0eUPLOAD_FAILURE\x10\x02\x32\xbb\x05\n\x0bUserService\x12<\n\x0b\x63urrentUser\x12\x15.duoyu.CurrentRequest\x1a\x16.duoyu.CurrentResponse\x12\x44\n\x0bgetUserById\x12\x19.duoyu.GetUserByIdRequest\x1a\x1a.duoyu.GetUserByIdResponse\x12\x39\n\nfollowUser\x12\x14.duoyu.FollowRequest\x1a\x15.duoyu.FollowResponse\x12?\n\x0cunfollowUser\x12\x16.duoyu.UnfollowRequest\x1a\x17.duoyu.UnfollowResponse\x12?\n\x0c\x66ollowerList\x12\x16.duoyu.FollowerRequest\x1a\x17.duoyu.FollowerResponse\x12\x42\n\rfollowingList\x12\x17.duoyu.FollowingRequest\x1a\x18.duoyu.FollowingResponse\x12M\n\x0e\x63hangePassword\x12\x1c.duoyu.ChangePasswordRequest\x1a\x1d.duoyu.ChangePasswordResponse\x12?\n\x0cUserTimeline\x12\x16.duoyu.TimelineRequest\x1a\x17.duoyu.TimelineResponse\x12Q\n\x13GetTimelineByUserId\x12!.duoyu.GetTimelineByUserIdRequest\x1a\x17.duoyu.TimelineResponse\x12\x44\n\x0buploadImage\x12\x19.duoyu.UploadImageRequest\x1a\x1a.duoyu.UploadImageResponseB \n\x1eme.littlekey.duoyu.model.protob\x06proto3')
   ,
-  dependencies=[model_dot_model__pb2.DESCRIPTOR,comment__pb2.DESCRIPTOR,])
+  dependencies=[model_dot_model__pb2.DESCRIPTOR,common__pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 
@@ -41,8 +41,8 @@ _GETUSERBYIDRESPONSE_ERRNO = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=301,
-  serialized_end=328,
+  serialized_start=300,
+  serialized_end=327,
 )
 _sym_db.RegisterEnumDescriptor(_GETUSERBYIDRESPONSE_ERRNO)
 
@@ -63,8 +63,8 @@ _FOLLOWRESPONSE_ERRNO = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=492,
-  serialized_end=542,
+  serialized_start=491,
+  serialized_end=541,
 )
 _sym_db.RegisterEnumDescriptor(_FOLLOWRESPONSE_ERRNO)
 
@@ -85,8 +85,8 @@ _UNFOLLOWRESPONSE_ERRNO = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=712,
-  serialized_end=758,
+  serialized_start=711,
+  serialized_end=757,
 )
 _sym_db.RegisterEnumDescriptor(_UNFOLLOWRESPONSE_ERRNO)
 
@@ -107,8 +107,8 @@ _CHANGEPASSWORDRESPONSE_ERRNO = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1211,
-  serialized_end=1255,
+  serialized_start=1207,
+  serialized_end=1251,
 )
 _sym_db.RegisterEnumDescriptor(_CHANGEPASSWORDRESPONSE_ERRNO)
 
@@ -133,8 +133,8 @@ _UPLOADIMAGERESPONSE_ERRNO = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1592,
-  serialized_end=1653,
+  serialized_start=1586,
+  serialized_end=1647,
 )
 _sym_db.RegisterEnumDescriptor(_UPLOADIMAGERESPONSE_ERRNO)
 
@@ -158,8 +158,8 @@ _CURRENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=64,
-  serialized_end=80,
+  serialized_start=63,
+  serialized_end=79,
 )
 
 
@@ -196,8 +196,8 @@ _CURRENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=82,
-  serialized_end=143,
+  serialized_start=81,
+  serialized_end=142,
 )
 
 
@@ -227,8 +227,8 @@ _GETUSERBYIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=145,
-  serialized_end=182,
+  serialized_start=144,
+  serialized_end=181,
 )
 
 
@@ -273,8 +273,8 @@ _GETUSERBYIDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=185,
-  serialized_end=328,
+  serialized_start=184,
+  serialized_end=327,
 )
 
 
@@ -304,8 +304,8 @@ _FOLLOWREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=330,
-  serialized_end=362,
+  serialized_start=329,
+  serialized_end=361,
 )
 
 
@@ -350,8 +350,8 @@ _FOLLOWRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=365,
-  serialized_end=542,
+  serialized_start=364,
+  serialized_end=541,
 )
 
 
@@ -381,8 +381,8 @@ _UNFOLLOWREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=544,
-  serialized_end=578,
+  serialized_start=543,
+  serialized_end=577,
 )
 
 
@@ -427,8 +427,8 @@ _UNFOLLOWRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=581,
-  serialized_end=758,
+  serialized_start=580,
+  serialized_end=757,
 )
 
 
@@ -465,8 +465,8 @@ _FOLLOWERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=760,
-  serialized_end=827,
+  serialized_start=759,
+  serialized_end=825,
 )
 
 
@@ -496,8 +496,8 @@ _FOLLOWERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=829,
-  serialized_end=875,
+  serialized_start=827,
+  serialized_end=873,
 )
 
 
@@ -534,8 +534,8 @@ _FOLLOWINGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=877,
-  serialized_end=945,
+  serialized_start=875,
+  serialized_end=942,
 )
 
 
@@ -565,8 +565,8 @@ _FOLLOWINGRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=947,
-  serialized_end=994,
+  serialized_start=944,
+  serialized_end=991,
 )
 
 
@@ -610,8 +610,8 @@ _CHANGEPASSWORDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=996,
-  serialized_end=1113,
+  serialized_start=993,
+  serialized_end=1109,
 )
 
 
@@ -649,8 +649,8 @@ _CHANGEPASSWORDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1116,
-  serialized_end=1255,
+  serialized_start=1112,
+  serialized_end=1251,
 )
 
 
@@ -680,8 +680,8 @@ _TIMELINEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1257,
-  serialized_end=1307,
+  serialized_start=1253,
+  serialized_end=1302,
 )
 
 
@@ -718,8 +718,8 @@ _GETTIMELINEBYUSERIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1309,
-  serialized_end=1387,
+  serialized_start=1304,
+  serialized_end=1381,
 )
 
 
@@ -749,8 +749,8 @@ _TIMELINERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1389,
-  serialized_end=1445,
+  serialized_start=1383,
+  serialized_end=1439,
 )
 
 
@@ -780,8 +780,8 @@ _UPLOADIMAGEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1447,
-  serialized_end=1482,
+  serialized_start=1441,
+  serialized_end=1476,
 )
 
 
@@ -826,8 +826,8 @@ _UPLOADIMAGERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1485,
-  serialized_end=1653,
+  serialized_start=1479,
+  serialized_end=1647,
 )
 
 _CURRENTRESPONSE.fields_by_name['user'].message_type = model_dot_model__pb2._USER
@@ -840,15 +840,15 @@ _FOLLOWRESPONSE_ERRNO.containing_type = _FOLLOWRESPONSE
 _UNFOLLOWRESPONSE.fields_by_name['relationship'].enum_type = model_dot_model__pb2._USER_RELATIONSHIP
 _UNFOLLOWRESPONSE.fields_by_name['errno'].enum_type = _UNFOLLOWRESPONSE_ERRNO
 _UNFOLLOWRESPONSE_ERRNO.containing_type = _UNFOLLOWRESPONSE
-_FOLLOWERREQUEST.fields_by_name['cursor'].message_type = comment__pb2._CURSOR
+_FOLLOWERREQUEST.fields_by_name['cursor'].message_type = common__pb2._CURSOR
 _FOLLOWERRESPONSE.fields_by_name['users'].message_type = model_dot_model__pb2._USER
-_FOLLOWINGREQUEST.fields_by_name['cursor'].message_type = comment__pb2._CURSOR
+_FOLLOWINGREQUEST.fields_by_name['cursor'].message_type = common__pb2._CURSOR
 _FOLLOWINGRESPONSE.fields_by_name['users'].message_type = model_dot_model__pb2._USER
-_CHANGEPASSWORDREQUEST.fields_by_name['password'].message_type = comment__pb2._PREHASHEDPASSWORD
+_CHANGEPASSWORDREQUEST.fields_by_name['password'].message_type = common__pb2._PREHASHEDPASSWORD
 _CHANGEPASSWORDRESPONSE.fields_by_name['errno'].enum_type = _CHANGEPASSWORDRESPONSE_ERRNO
 _CHANGEPASSWORDRESPONSE_ERRNO.containing_type = _CHANGEPASSWORDRESPONSE
-_TIMELINEREQUEST.fields_by_name['cursor'].message_type = comment__pb2._CURSOR
-_GETTIMELINEBYUSERIDREQUEST.fields_by_name['cursor'].message_type = comment__pb2._CURSOR
+_TIMELINEREQUEST.fields_by_name['cursor'].message_type = common__pb2._CURSOR
+_GETTIMELINEBYUSERIDREQUEST.fields_by_name['cursor'].message_type = common__pb2._CURSOR
 _TIMELINERESPONSE.fields_by_name['happenings'].message_type = model_dot_model__pb2._HAPPENING
 _UPLOADIMAGERESPONSE.fields_by_name['errno'].enum_type = _UPLOADIMAGERESPONSE_ERRNO
 _UPLOADIMAGERESPONSE_ERRNO.containing_type = _UPLOADIMAGERESPONSE

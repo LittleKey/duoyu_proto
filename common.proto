@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package comment;
+package common;
 option java_package = "me.littlekey.duoyu.model.proto";
 
 message PrehashedPassword {

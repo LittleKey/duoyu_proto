@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 from model import model_pb2 as model_dot_model__pb2
-import comment_pb2 as comment__pb2
+import common_pb2 as common__pb2
 from business import public_pb2 as business_dot_public__pb2
 
 
@@ -22,9 +22,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='business/comment.proto',
   package='duoyu',
   syntax='proto3',
-  serialized_pb=_b('\n\x16\x62usiness/comment.proto\x12\x05\x64uoyu\x1a\x11model/model.proto\x1a\rcomment.proto\x1a\x15\x62usiness/public.proto\"K\n\x16GetDiaryCommentRequest\x12\x10\n\x08\x64iary_id\x18\x01 \x01(\t\x12\x1f\n\x06\x63ursor\x18\x02 \x01(\x0b\x32\x0f.comment.Cursor\"O\n\x18GetCorrectCommentRequest\x12\x12\n\ncorrect_id\x18\x01 \x01(\t\x12\x1f\n\x06\x63ursor\x18\x02 \x01(\x0b\x32\x0f.comment.Cursor\"W\n\x12GetCommentResponse\x12 \n\x08\x63omments\x18\x01 \x03(\x0b\x32\x0e.model.Comment\x12\x1f\n\x06\x63ursor\x18\x02 \x01(\x0b\x32\x0f.comment.Cursor\"4\n\x11PutCommentRequest\x12\x1f\n\x07\x63omment\x18\x01 \x01(\x0b\x32\x0e.model.Comment\"F\n\x12PutCommentResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x1f\n\x07\x63omment\x18\x02 \x01(\x0b\x32\x0e.model.Comment\"*\n\x14\x44\x65leteCommentRequest\x12\x12\n\ncomment_id\x18\x01 \x01(\t\"{\n\x15\x44\x65leteCommentResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x31\n\x05\x65rrno\x18\x02 \x01(\x0e\x32\".duoyu.DeleteCommentResponse.Errno\"\x1e\n\x05\x45rrno\x12\x15\n\x11NOT_FOUND_COMMENT\x10\x00\x32\xb3\x03\n\x0e\x43ommentService\x12K\n\x0fgetDiaryComment\x12\x1d.duoyu.GetDiaryCommentRequest\x1a\x19.duoyu.GetCommentResponse\x12O\n\x11getCorrectComment\x12\x1f.duoyu.GetCorrectCommentRequest\x1a\x19.duoyu.GetCommentResponse\x12\x36\n\x0blikeComment\x12\x12.duoyu.LikeRequest\x1a\x13.duoyu.LikeResponse\x12<\n\runlikeComment\x12\x14.duoyu.UnlikeRequest\x1a\x15.duoyu.UnlikeResponse\x12\x41\n\nputComment\x12\x18.duoyu.PutCommentRequest\x1a\x19.duoyu.PutCommentResponse\x12J\n\rdeleteComment\x12\x1b.duoyu.DeleteCommentRequest\x1a\x1c.duoyu.DeleteCommentResponseB \n\x1eme.littlekey.duoyu.model.protob\x06proto3')
+  serialized_pb=_b('\n\x16\x62usiness/comment.proto\x12\x05\x64uoyu\x1a\x11model/model.proto\x1a\x0c\x63ommon.proto\x1a\x15\x62usiness/public.proto\"J\n\x16GetDiaryCommentRequest\x12\x10\n\x08\x64iary_id\x18\x01 \x01(\t\x12\x1e\n\x06\x63ursor\x18\x02 \x01(\x0b\x32\x0e.common.Cursor\"N\n\x18GetCorrectCommentRequest\x12\x12\n\ncorrect_id\x18\x01 \x01(\t\x12\x1e\n\x06\x63ursor\x18\x02 \x01(\x0b\x32\x0e.common.Cursor\"V\n\x12GetCommentResponse\x12 \n\x08\x63omments\x18\x01 \x03(\x0b\x32\x0e.model.Comment\x12\x1e\n\x06\x63ursor\x18\x02 \x01(\x0b\x32\x0e.common.Cursor\"4\n\x11PutCommentRequest\x12\x1f\n\x07\x63omment\x18\x01 \x01(\x0b\x32\x0e.model.Comment\"F\n\x12PutCommentResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x1f\n\x07\x63omment\x18\x02 \x01(\x0b\x32\x0e.model.Comment\"*\n\x14\x44\x65leteCommentRequest\x12\x12\n\ncomment_id\x18\x01 \x01(\t\"{\n\x15\x44\x65leteCommentResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x31\n\x05\x65rrno\x18\x02 \x01(\x0e\x32\".duoyu.DeleteCommentResponse.Errno\"\x1e\n\x05\x45rrno\x12\x15\n\x11NOT_FOUND_COMMENT\x10\x00\x32\xb3\x03\n\x0e\x43ommentService\x12K\n\x0fgetDiaryComment\x12\x1d.duoyu.GetDiaryCommentRequest\x1a\x19.duoyu.GetCommentResponse\x12O\n\x11getCorrectComment\x12\x1f.duoyu.GetCorrectCommentRequest\x1a\x19.duoyu.GetCommentResponse\x12\x36\n\x0blikeComment\x12\x12.duoyu.LikeRequest\x1a\x13.duoyu.LikeResponse\x12<\n\runlikeComment\x12\x14.duoyu.UnlikeRequest\x1a\x15.duoyu.UnlikeResponse\x12\x41\n\nputComment\x12\x18.duoyu.PutCommentRequest\x1a\x19.duoyu.PutCommentResponse\x12J\n\rdeleteComment\x12\x1b.duoyu.DeleteCommentRequest\x1a\x1c.duoyu.DeleteCommentResponseB \n\x1eme.littlekey.duoyu.model.protob\x06proto3')
   ,
-  dependencies=[model_dot_model__pb2.DESCRIPTOR,comment__pb2.DESCRIPTOR,business_dot_public__pb2.DESCRIPTOR,])
+  dependencies=[model_dot_model__pb2.DESCRIPTOR,common__pb2.DESCRIPTOR,business_dot_public__pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 
@@ -42,8 +42,8 @@ _DELETECOMMENTRESPONSE_ERRNO = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=600,
-  serialized_end=630,
+  serialized_start=596,
+  serialized_end=626,
 )
 _sym_db.RegisterEnumDescriptor(_DELETECOMMENTRESPONSE_ERRNO)
 
@@ -81,8 +81,8 @@ _GETDIARYCOMMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=90,
-  serialized_end=165,
+  serialized_start=89,
+  serialized_end=163,
 )
 
 
@@ -119,8 +119,8 @@ _GETCORRECTCOMMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=167,
-  serialized_end=246,
+  serialized_start=165,
+  serialized_end=243,
 )
 
 
@@ -157,8 +157,8 @@ _GETCOMMENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=248,
-  serialized_end=335,
+  serialized_start=245,
+  serialized_end=331,
 )
 
 
@@ -188,8 +188,8 @@ _PUTCOMMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=337,
-  serialized_end=389,
+  serialized_start=333,
+  serialized_end=385,
 )
 
 
@@ -226,8 +226,8 @@ _PUTCOMMENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=391,
-  serialized_end=461,
+  serialized_start=387,
+  serialized_end=457,
 )
 
 
@@ -257,8 +257,8 @@ _DELETECOMMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=463,
-  serialized_end=505,
+  serialized_start=459,
+  serialized_end=501,
 )
 
 
@@ -296,14 +296,14 @@ _DELETECOMMENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=507,
-  serialized_end=630,
+  serialized_start=503,
+  serialized_end=626,
 )
 
-_GETDIARYCOMMENTREQUEST.fields_by_name['cursor'].message_type = comment__pb2._CURSOR
-_GETCORRECTCOMMENTREQUEST.fields_by_name['cursor'].message_type = comment__pb2._CURSOR
+_GETDIARYCOMMENTREQUEST.fields_by_name['cursor'].message_type = common__pb2._CURSOR
+_GETCORRECTCOMMENTREQUEST.fields_by_name['cursor'].message_type = common__pb2._CURSOR
 _GETCOMMENTRESPONSE.fields_by_name['comments'].message_type = model_dot_model__pb2._COMMENT
-_GETCOMMENTRESPONSE.fields_by_name['cursor'].message_type = comment__pb2._CURSOR
+_GETCOMMENTRESPONSE.fields_by_name['cursor'].message_type = common__pb2._CURSOR
 _PUTCOMMENTREQUEST.fields_by_name['comment'].message_type = model_dot_model__pb2._COMMENT
 _PUTCOMMENTRESPONSE.fields_by_name['comment'].message_type = model_dot_model__pb2._COMMENT
 _DELETECOMMENTRESPONSE.fields_by_name['errno'].enum_type = _DELETECOMMENTRESPONSE_ERRNO

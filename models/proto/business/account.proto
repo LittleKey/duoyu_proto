@@ -47,8 +47,7 @@ message RegisterResponse {
         UNKNOWN = 0;
         EMAIL_IN_USE = 1;
         INVALID_EMAIL_CODE = 2;
-        LANGUAGE_EMPTY = 3;
-        NICKNAME_EMPTY = 4;
+        INVALID_INFO = 3;
     }
 }
 

@@ -21,22 +21,14 @@ message CorrectedResponse {
     common.Cursor cursor = 2;
 }
 
-message PutCorrectRequest {
+message CorrectRequest {
     model.Correct correct = 1;
 }
 
-message PutCorrectResponse {
-    bool success = 1;
-    model.Correct correct = 2;
-}
-
-message DeleteCorrectRequest {
-    string correct_id = 1;
-}
-
-message DeleteCorrectResponse {
+message CorrectResponse {
     bool success = 1;
     Errno errno = 2;
+    model.Correct correct = 3;
     enum Errno {
         NOT_FOUND_CORRECT = 0;
     }
@@ -47,6 +39,6 @@ service CorrectService {
     rpc getCorrectedsByUserId(GetCorrectedByUserIdRequest) returns (CorrectedResponse);
     rpc likeCorrect(LikeRequest) returns (LikeResponse);
     rpc unlikeCorrect(UnlikeRequest) returns (UnlikeResponse);
-    rpc putCorrect(PutCorrectRequest) returns (PutCorrectResponse);
-    rpc deleteCorrect(DeleteCorrectRequest) returns (DeleteCorrectResponse);
+    rpc putCorrect(CorrectRequest) returns (CorrectResponse);
+    rpc deleteCorrect(CorrectRequest) returns (CorrectResponse);
 }

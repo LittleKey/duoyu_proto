@@ -54,6 +54,7 @@ message Diary {
     Language language = 4;
     string content = 5;
     int32 date = 6;
+    int32 likes = 7;
 }
 
 message Correct {
@@ -64,6 +65,7 @@ message Correct {
     Language language = 5;
     string content = 6;
     int32 date = 7;
+    int32 likes = 8;
 }
 
 message Comment {
@@ -74,6 +76,7 @@ message Comment {
     string content = 5;
     int32 publish_date = 6;
     int32 last_edit_date = 7;
+    int32 likes = 8;
 }
 
 message Happening {

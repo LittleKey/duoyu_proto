@@ -39,24 +39,17 @@ message PublishedResponse {
     common.Cursor cursor = 2;
 }
 
-message PutDiaryRequest {
+message DiaryRequest {
     model.Diary diary = 1;
 }
 
-message PutDiaryResponse {
-    bool success = 1;
-    model.Diary diary = 2;
-}
-
-message DeleteDiaryRequest {
-    string diary_id = 1;
-}
-
-message DeleteDiaryResponse {
+message DiaryResponse {
     bool success = 1;
     Errno errno = 2;
+    model.Diary diary = 3;
     enum Errno {
         NOT_FOUND_DIARY = 0;
+        INVALID_INFO = 1;
     }
 }
 
@@ -67,6 +60,6 @@ service DiaryService {
     rpc getPublishedDiariesByUserId(GetPublishedByUserIdRequest) returns (PublishedResponse);
     rpc likeDiary(LikeRequest) returns (LikeResponse);
     rpc unlikeDiary(UnlikeRequest) returns (UnlikeResponse);
-    rpc putDiary(PutDiaryRequest) returns (PutDiaryResponse);
-    rpc deleteDiary(DeleteDiaryRequest) returns (DeleteDiaryResponse);
+    rpc putDiary(DiaryRequest) returns (DiaryResponse);
+    rpc deleteDiary(DiaryRequest) returns (DiaryResponse);
 }

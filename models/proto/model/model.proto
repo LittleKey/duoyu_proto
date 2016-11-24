@@ -10,8 +10,6 @@ enum Language {
     CHINESE  = 0;
     ENGLISH = 1;
     JAPANESE = 2;
-    RUSSIAN = 3;
-    KOREAN = 4;
 }
 
 message User {

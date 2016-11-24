@@ -11,8 +11,9 @@ message PrehashedPassword {
 message Cursor {
     int32 timestamp = 1;
     int32 offset = 2;
-    int32 limit = 3;
-    bool has_more = 4;
+    int32 page = 3;
+    int32 limit = 4;
+    bool has_more = 5;
 }
 
 message NullMessage {

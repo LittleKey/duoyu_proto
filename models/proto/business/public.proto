@@ -12,6 +12,7 @@ message LikeResponse {
     Errno errno = 2;
     enum Errno {
         ALREADY_LIKE = 0;
+        NOT_FOUND = 1;
     }
 }
 
@@ -24,5 +25,6 @@ message UnlikeResponse {
     Errno errno = 2;
     enum Errno {
         NOT_LIKE = 0;
+        NOT_FOUND = 1;
     }
 }

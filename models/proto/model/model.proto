@@ -57,13 +57,12 @@ message Diary {
 
 message Correct {
     string correct_id = 1;
-    string title = 2;
-    User author = 3;
-    Diary diary = 4;
-    Language language = 5;
-    string content = 6;
-    int32 date = 7;
-    int32 likes = 8;
+    User author = 2;
+    Diary diary = 3;
+    string content = 4;
+    int32 date = 5;
+    int32 last_edit_date = 6;
+    int32 likes = 7;
 }
 
 message Comment {

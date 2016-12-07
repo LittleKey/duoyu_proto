@@ -31,6 +31,9 @@ message CorrectResponse {
     model.Correct correct = 3;
     enum Errno {
         NOT_FOUND_CORRECT = 0;
+        NOT_FOUND_DIARY = 1;
+        INVALID_INFO = 2;
+        CORRECT_EXISTED = 3;
     }
 }
 

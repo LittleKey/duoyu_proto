@@ -7,17 +7,22 @@ import "models/proto/model/model.proto";
 import "models/proto/common.proto";
 import "models/proto/business/public.proto";
 
-message GetDiaryCommentRequest {
+message getCommentsByDiaryIdRequest {
     string diary_id = 1;
     common.Cursor cursor = 2;
 }
 
-message GetCorrectCommentRequest {
+message GetCommentsByCorrectIdRequest {
     string correct_id = 1;
     common.Cursor cursor = 2;
 }
 
-message GetCommentResponse {
+message GetCommentsByUserIdRequest {
+    string user_id = 1;
+    common.Cursor cursor = 2;
+}
+
+message CommentsResponse {
     repeated model.Comment comments = 1;
     common.Cursor cursor = 2;
 }
@@ -38,10 +43,13 @@ message CommentResponse {
 }
 
 service CommentService {
-    rpc getDiaryComment(GetDiaryCommentRequest) returns (GetCommentResponse);
-    rpc getCorrectComment(GetCorrectCommentRequest) returns (GetCommentResponse);
+    rpc getCommentsByDiaryId(getCommentsByDiaryIdRequest) returns (CommentsResponse);
+    rpc getCommentsByCorrectId(GetCommentsByCorrectIdRequest) returns (CommentsResponse);
+    rpc getCommentsByUserId(GetCommentsByUserIdRequest) returns (CommentsResponse);
+
     rpc likeComment(LikeRequest) returns (LikeResponse);
     rpc unlikeComment(UnlikeRequest) returns (UnlikeResponse);
+
     rpc putComment(CommentRequest) returns (CommentResponse);
     rpc deleteComment(CommentRequest) returns (CommentResponse);
 }

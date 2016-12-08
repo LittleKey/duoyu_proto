@@ -11,18 +11,8 @@ message HotRequest {
     common.Cursor cursor = 1;
 }
 
-message HotResponse {
-    repeated model.Diary diaries = 1;
-    common.Cursor cursor = 2;
-}
-
 message RecentRequest {
     common.Cursor cursor = 1;
-}
-
-message RecentResponse {
-    repeated model.Diary diaries = 1;
-    common.Cursor cursor = 2;
 }
 
 message PublishedRequest {
@@ -34,7 +24,7 @@ message GetPublishedByUserIdRequest {
     common.Cursor cursor = 2;
 }
 
-message PublishedResponse {
+message DiariesResponse {
     repeated model.Diary diaries = 1;
     common.Cursor cursor = 2;
 }
@@ -53,27 +43,16 @@ message DiaryResponse {
     }
 }
 
-message GetDiaryByIdRequest {
-    string diary_id = 1;
-}
-
-message GetDiaryByIdResponse {
-    bool success = 1;
-    Errno errno = 2;
-    model.Diary diary = 3;
-    enum Errno {
-        NOT_FOUND_DIARY = 0;
-    }
-}
-
 service DiaryService {
-    rpc getDiaryById(GetDiaryByIdRequest) returns (GetDiaryByIdResponse);
-    rpc hotDiaries(HotRequest) returns (HotResponse);
-    rpc recentDiaries(RecentRequest) returns (RecentResponse);
-    rpc publishedDiaries(PublishedRequest) returns (PublishedResponse);
-    rpc getPublishedDiariesByUserId(GetPublishedByUserIdRequest) returns (PublishedResponse);
+    rpc hotDiaries(HotRequest) returns (DiariesResponse);
+    rpc recentDiaries(RecentRequest) returns (DiariesResponse);
+    rpc publishedDiaries(PublishedRequest) returns (DiariesResponse);
+    rpc getPublishedDiariesByUserId(GetPublishedByUserIdRequest) returns (DiariesResponse);
+
     rpc likeDiary(LikeRequest) returns (LikeResponse);
     rpc unlikeDiary(UnlikeRequest) returns (UnlikeResponse);
+
+    rpc getDiaryById(DiaryRequest) returns (DiaryResponse);
     rpc putDiary(DiaryRequest) returns (DiaryResponse);
     rpc deleteDiary(DiaryRequest) returns (DiaryResponse);
 }

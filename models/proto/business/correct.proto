@@ -7,16 +7,21 @@ import "models/proto/model/model.proto";
 import "models/proto/common.proto";
 import "models/proto/business/public.proto";
 
-message CorrectedRequest {
+message CorrectsRequest {
     common.Cursor cursor = 1;
 }
 
-message GetCorrectedByUserIdRequest {
+message GetCorrectsByUserIdRequest {
     string user_id = 1;
     common.Cursor cursor = 2;
 }
 
-message CorrectedResponse {
+message GetCorrectsByDiaryIdRequest {
+    string diary_id = 1;
+    common.Cursor cursor = 2;
+}
+
+message CorrectsResponse {
     repeated model.Correct corrects = 1;
     common.Cursor cursor = 2;
 }
@@ -37,25 +42,15 @@ message CorrectResponse {
     }
 }
 
-message GetCorrectByIdRequest {
-    string correct_id = 1;
-}
-
-message GetCorrectByIdResponse {
-    bool success = 1;
-    Errno errno = 2;
-    model.Correct correct = 3;
-    enum Errno {
-        NOT_FOUND_CORRECT = 0;
-    }
-}
-
 service CorrectService {
-    rpc getCorrectById(GetCorrectByIdRequest) returns (GetCorrectByIdResponse);
-    rpc userCorrecteds(CorrectedRequest) returns (CorrectedResponse);
-    rpc getCorrectedsByUserId(GetCorrectedByUserIdRequest) returns (CorrectedResponse);
+    rpc userCorrects(CorrectsRequest) returns (CorrectsResponse);
+    rpc getCorrectsByUserId(GetCorrectsByUserIdRequest) returns (CorrectsResponse);
+    rpc getCorrectsByDiaryId(GetCorrectsByDiaryIdRequest) returns (CorrectsResponse);
+
     rpc likeCorrect(LikeRequest) returns (LikeResponse);
     rpc unlikeCorrect(UnlikeRequest) returns (UnlikeResponse);
+
+    rpc getCorrectById(CorrectRequest) returns (CorrectResponse);
     rpc putCorrect(CorrectRequest) returns (CorrectResponse);
     rpc deleteCorrect(CorrectRequest) returns (CorrectResponse);
     rpc patchCorrect(CorrectRequest) returns (CorrectResponse);

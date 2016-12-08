@@ -37,7 +37,21 @@ message CorrectResponse {
     }
 }
 
+message GetCorrectByIdRequest {
+    string correct_id = 1;
+}
+
+message GetCorrectByIdResponse {
+    bool success = 1;
+    Errno errno = 2;
+    model.Correct correct = 3;
+    enum Errno {
+        NOT_FOUND_CORRECT = 0;
+    }
+}
+
 service CorrectService {
+    rpc getCorrectById(GetCorrectByIdRequest) returns (GetCorrectByIdResponse);
     rpc userCorrecteds(CorrectedRequest) returns (CorrectedResponse);
     rpc getCorrectedsByUserId(GetCorrectedByUserIdRequest) returns (CorrectedResponse);
     rpc likeCorrect(LikeRequest) returns (LikeResponse);

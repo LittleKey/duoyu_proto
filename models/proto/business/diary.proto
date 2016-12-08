@@ -53,7 +53,21 @@ message DiaryResponse {
     }
 }
 
+message GetDiaryByIdRequest {
+    string diary_id = 1;
+}
+
+message GetDiaryByIdResponse {
+    bool success = 1;
+    Errno errno = 2;
+    model.Diary diary = 3;
+    enum Errno {
+        NOT_FOUND_DIARY = 0;
+    }
+}
+
 service DiaryService {
+    rpc getDiaryById(GetDiaryByIdRequest) returns (GetDiaryByIdResponse);
     rpc hotDiaries(HotRequest) returns (HotResponse);
     rpc recentDiaries(RecentRequest) returns (RecentResponse);
     rpc publishedDiaries(PublishedRequest) returns (PublishedResponse);

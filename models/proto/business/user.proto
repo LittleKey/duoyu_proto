@@ -23,7 +23,7 @@ message GetUserByIdResponse {
     model.User user = 2;
     Errno errno = 3;
     enum Errno {
-        USER_NOT_FOUND = 0;
+        NOT_FOUND_USER = 0;
     }
 }
 
@@ -36,7 +36,7 @@ message FollowResponse {
     model.User.Relationship relationship = 2;
     Errno errno = 3;
     enum Errno {
-        USER_NOT_FOUND = 0;
+        NOT_FOUND_USER = 0;
         ALREADY_FOLLOWING = 1;
     }
 }
@@ -50,7 +50,7 @@ message UnfollowResponse {
     model.User.Relationship relationship = 2;
     Errno errno = 3;
     enum Errno {
-        USER_NOT_FOUND = 0;
+        NOT_FOUND_USER = 0;
         NOT_FOLLOWING = 1;
     }
 }

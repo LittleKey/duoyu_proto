@@ -27,11 +27,11 @@ message GetUserByIdResponse {
     }
 }
 
-message FollowRequest {
+message FollowUserRequest {
     string user_id = 1;
 }
 
-message FollowResponse {
+message FollowUserResponse {
     bool success = 1;
     model.User.Relationship relationship = 2;
     Errno errno = 3;
@@ -41,11 +41,11 @@ message FollowResponse {
     }
 }
 
-message UnfollowRequest {
+message UnfollowUserRequest {
     string user_id = 1;
 }
 
-message UnfollowResponse {
+message UnfollowUserResponse {
     bool success = 1;
     model.User.Relationship relationship = 2;
     Errno errno = 3;
@@ -55,21 +55,21 @@ message UnfollowResponse {
     }
 }
 
-message FollowerRequest {
+message UserFollowerRequest {
     string user_id = 1;
     common.Cursor cursor = 2;
 }
 
-message FollowerResponse {
+message UserFollowerResponse {
     repeated model.User users = 1;
 }
 
-message FollowingRequest {
+message UserFollowingRequest {
     string user_id = 1;
     common.Cursor cursor = 2;
 }
 
-message FollowingResponse {
+message UserFollowingResponse {
     repeated model.User users = 1;
 }
 
@@ -120,10 +120,10 @@ service UserService {
     rpc currentUser(CurrentRequest) returns (CurrentResponse);
     rpc getUserById(GetUserByIdRequest) returns (GetUserByIdResponse);
 
-    rpc followUser(FollowRequest) returns (FollowResponse);
-    rpc unfollowUser(UnfollowRequest) returns (UnfollowResponse);
-    rpc followerList(FollowerRequest) returns (FollowerResponse);
-    rpc followingList(FollowingRequest) returns (FollowingResponse);
+    rpc followUser(FollowUserRequest) returns (FollowUserResponse);
+    rpc unfollowUser(UnfollowUserRequest) returns (UnfollowUserResponse);
+    rpc followerList(UserFollowerRequest) returns (UserFollowerResponse);
+    rpc followingList(UserFollowingRequest) returns (UserFollowingResponse);
 
     rpc changePassword(ChangePasswordRequest) returns (ChangePasswordResponse);
 

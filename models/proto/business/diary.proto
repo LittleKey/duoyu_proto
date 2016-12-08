@@ -43,11 +43,60 @@ message DiaryResponse {
     }
 }
 
+message FollowDiaryRequest {
+    string diary_id = 1;
+}
+
+message FollowDiaryResponse {
+    bool success = 1;
+    Errno errno = 2;
+    enum Errno {
+        NOT_FOUND_DIARY = 0;
+        ALREADY_FOLLOWING = 1;
+    }
+}
+
+message UnfollowDiaryRequest {
+    string diary_id = 1;
+}
+
+message UnfollowDiaryResponse {
+    bool success = 1;
+    Errno errno = 2;
+    enum Errno {
+        NOT_FOUND_DIARY = 0;
+        NOT_FOLLOWING = 1;
+    }
+}
+
+message DiaryFollowerRequest {
+    string diary_id = 1;
+    common.Cursor cursor = 2;
+}
+
+message DiaryFollowerResponse {
+    repeated model.User users = 1;
+}
+
+message DiaryFollowingRequest {
+    string diary_id = 1;
+    common.Cursor cursor = 2;
+}
+
+message DiaryFollowingResponse {
+    repeated model.Diary diaries = 1;
+}
+
 service DiaryService {
     rpc hotDiaries(HotRequest) returns (DiariesResponse);
     rpc recentDiaries(RecentRequest) returns (DiariesResponse);
     rpc publishedDiaries(PublishedRequest) returns (DiariesResponse);
     rpc getPublishedDiariesByUserId(GetPublishedByUserIdRequest) returns (DiariesResponse);
+
+    rpc followDiary(FollowDiaryRequest) returns (FollowDiaryResponse);
+    rpc unfollowDiary(UnfollowDiaryRequest) returns (UnfollowDiaryResponse);
+    rpc diaryFollower(DiaryFollowerRequest) returns (DiaryFollowerResponse);
+    rpc diaryFollowing(DiaryFollowingRequest) returns (DiaryFollowingResponse);
 
     rpc likeDiary(LikeRequest) returns (LikeResponse);
     rpc unlikeDiary(UnlikeRequest) returns (UnlikeResponse);

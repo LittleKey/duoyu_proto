@@ -53,6 +53,7 @@ message Diary {
     string content = 5;
     int32 date = 6;
     int32 likes = 7;
+    int32 followers = 8;
 }
 
 message Correct {
@@ -89,6 +90,7 @@ message Happening {
         LIKE_CORRECT = 1;
         PUBLISH_DIARY = 2;
         PUBLISH_CORRECT = 3;
+        FOLLOW_DIARY = 4;
     }
 }
 

@@ -44,4 +44,5 @@ service CorrectService {
     rpc unlikeCorrect(UnlikeRequest) returns (UnlikeResponse);
     rpc putCorrect(CorrectRequest) returns (CorrectResponse);
     rpc deleteCorrect(CorrectRequest) returns (CorrectResponse);
+    rpc patchCorrect(CorrectRequest) returns (CorrectResponse);
 }

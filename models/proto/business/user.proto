@@ -119,12 +119,16 @@ message UploadImageResponse {
 service UserService {
     rpc currentUser(CurrentRequest) returns (CurrentResponse);
     rpc getUserById(GetUserByIdRequest) returns (GetUserByIdResponse);
+
     rpc followUser(FollowRequest) returns (FollowResponse);
     rpc unfollowUser(UnfollowRequest) returns (UnfollowResponse);
     rpc followerList(FollowerRequest) returns (FollowerResponse);
     rpc followingList(FollowingRequest) returns (FollowingResponse);
+
     rpc changePassword(ChangePasswordRequest) returns (ChangePasswordResponse);
+
     rpc UserTimeline(TimelineRequest) returns (TimelineResponse);
     rpc GetTimelineByUserId(GetTimelineByUserIdRequest) returns (TimelineResponse);
+
     rpc uploadImage(UploadImageRequest) returns (UploadImageResponse);
 }

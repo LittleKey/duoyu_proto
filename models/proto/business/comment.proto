@@ -7,7 +7,7 @@ import "models/proto/model/model.proto";
 import "models/proto/common.proto";
 import "models/proto/business/public.proto";
 
-message getCommentsByDiaryIdRequest {
+message GetCommentsByDiaryIdRequest {
     string diary_id = 1;
     common.Cursor cursor = 2;
 }
@@ -43,7 +43,7 @@ message CommentResponse {
 }
 
 service CommentService {
-    rpc getCommentsByDiaryId(getCommentsByDiaryIdRequest) returns (CommentsResponse);
+    rpc getCommentsByDiaryId(GetCommentsByDiaryIdRequest) returns (CommentsResponse);
     rpc getCommentsByCorrectId(GetCommentsByCorrectIdRequest) returns (CommentsResponse);
     rpc getCommentsByUserId(GetCommentsByUserIdRequest) returns (CommentsResponse);
 

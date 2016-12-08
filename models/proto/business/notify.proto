@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package duoyu;
+option java_package = "me.littlekey.duoyu.model.proto";
+
+import "models/proto/model/model.proto";
+import "models/proto/common.proto";
+
+message CurrentUserNotificationRequest {
+    common.Cursor cursor = 1;
+}
+
+message CurrentUserNotificationResponse {
+    repeated model.Notification notifications = 1;
+}
+
+service NotifyService {
+    rpc currentUserNotification(CurrentUserNotificationRequest) returns (CurrentUserNotificationResponse);
+}

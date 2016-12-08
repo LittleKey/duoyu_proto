@@ -32,6 +32,8 @@ message CommentResponse {
     model.Comment comment = 3;
     enum Errno {
         NOT_FOUND_COMMENT = 0;
+        NOT_FOUND_QUOTE = 1;
+        INVALID_INFO = 2;
     }
 }
 

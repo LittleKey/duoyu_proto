@@ -67,13 +67,14 @@ message Correct {
 
 message Comment {
     string comment_id = 1;
-    Diary diary = 2;
-    Correct correct = 3;
-    User user = 4;
-    string content = 5;
-    int32 publish_date = 6;
-    int32 last_edit_date = 7;
-    int32 likes = 8;
+    string quote_id = 2;
+    User author = 3;
+    string content = 4;
+    User quote_author = 5;
+    string quote = 6;
+    int32 date = 7;
+    int32 floor = 8;
+    int32 likes = 9;
 }
 
 message Happening {

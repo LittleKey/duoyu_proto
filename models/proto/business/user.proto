@@ -62,6 +62,7 @@ message UserFollowerRequest {
 
 message UserFollowerResponse {
     repeated model.User users = 1;
+    common.Cursor cursor = 2;
 }
 
 message UserFollowingRequest {
@@ -71,7 +72,19 @@ message UserFollowingRequest {
 
 message UserFollowingResponse {
     repeated model.User users = 1;
+    common.Cursor cursor = 2;
 }
+
+message UserFollowingDiaryRequest {
+    string diary_id = 1;
+    common.Cursor cursor = 2;
+}
+
+message UserFollowingDiaryResponse {
+    repeated model.Diary diaries = 1;
+    common.Cursor cursor = 2;
+}
+
 
 message ChangePasswordRequest {
     string email = 1;
@@ -124,6 +137,7 @@ service UserService {
     rpc unfollowUser(UnfollowUserRequest) returns (UnfollowUserResponse);
     rpc followerList(UserFollowerRequest) returns (UserFollowerResponse);
     rpc followingList(UserFollowingRequest) returns (UserFollowingResponse);
+    rpc followingDiaryList(UserFollowingDiaryRequest) returns (UserFollowingDiaryResponse);
 
     rpc changePassword(ChangePasswordRequest) returns (ChangePasswordResponse);
 

@@ -30,7 +30,7 @@ message User {
     enum Relationship {
         NOT_FOLLOW = 0;
         FOLLOWING = 1;
-        FOLLOWED = 2;
+        FOLLOWER = 2;
         EACH_FOLLOW = 3;
         SELF = 4;
     }

@@ -43,38 +43,38 @@ message DiaryResponse {
     }
 }
 
-message FollowDiaryRequest {
+message AttentionRequest {
     string diary_id = 1;
 }
 
-message FollowDiaryResponse {
+message AttentionResponse {
     bool success = 1;
     Errno errno = 2;
     enum Errno {
         NOT_FOUND_DIARY = 0;
-        ALREADY_FOLLOWING = 1;
+        ALREADY_ATTENTION = 1;
     }
 }
 
-message UnfollowDiaryRequest {
+message UnattendedRequest {
     string diary_id = 1;
 }
 
-message UnfollowDiaryResponse {
+message UnattendedResponse {
     bool success = 1;
     Errno errno = 2;
     enum Errno {
         NOT_FOUND_DIARY = 0;
-        NOT_FOLLOWING = 1;
+        NOT_ATTENTION = 1;
     }
 }
 
-message DiaryFollowerRequest {
+message AttenderRequest {
     string diary_id = 1;
     common.Cursor cursor = 2;
 }
 
-message DiaryFollowerResponse {
+message AttenderResponse {
     repeated model.User users = 1;
 }
 
@@ -84,9 +84,9 @@ service DiaryService {
     rpc publishedDiaries(PublishedRequest) returns (DiariesResponse);
     rpc getPublishedDiariesByUserId(GetPublishedByUserIdRequest) returns (DiariesResponse);
 
-    rpc followDiary(FollowDiaryRequest) returns (FollowDiaryResponse);
-    rpc unfollowDiary(UnfollowDiaryRequest) returns (UnfollowDiaryResponse);
-    rpc diaryFollower(DiaryFollowerRequest) returns (DiaryFollowerResponse);
+    rpc attention(AttentionRequest) returns (AttentionResponse);
+    rpc unattended(UnattendedRequest) returns (UnattendedRequest);
+    rpc attender(AttenderRequest) returns (AttenderResponse);
 
     rpc likeDiary(LikeRequest) returns (LikeResponse);
     rpc unlikeDiary(UnlikeRequest) returns (UnlikeResponse);

@@ -27,11 +27,11 @@ message GetUserByIdResponse {
     }
 }
 
-message FollowUserRequest {
+message FollowRequest {
     string user_id = 1;
 }
 
-message FollowUserResponse {
+message FollowResponse {
     bool success = 1;
     model.User.Relationship relationship = 2;
     Errno errno = 3;
@@ -41,11 +41,11 @@ message FollowUserResponse {
     }
 }
 
-message UnfollowUserRequest {
+message UnfollowRequest {
     string user_id = 1;
 }
 
-message UnfollowUserResponse {
+message UnfollowResponse {
     bool success = 1;
     model.User.Relationship relationship = 2;
     Errno errno = 3;
@@ -55,32 +55,32 @@ message UnfollowUserResponse {
     }
 }
 
-message UserFollowerRequest {
+message FollowerRequest {
     string user_id = 1;
     common.Cursor cursor = 2;
 }
 
-message UserFollowerResponse {
+message FollowerResponse {
     repeated model.User users = 1;
     common.Cursor cursor = 2;
 }
 
-message UserFollowingRequest {
+message FollowingRequest {
     string user_id = 1;
     common.Cursor cursor = 2;
 }
 
-message UserFollowingResponse {
+message FollowingResponse {
     repeated model.User users = 1;
     common.Cursor cursor = 2;
 }
 
-message UserFollowingDiaryRequest {
+message AttendingRequest {
     string diary_id = 1;
     common.Cursor cursor = 2;
 }
 
-message UserFollowingDiaryResponse {
+message AttendingResponse {
     repeated model.Diary diaries = 1;
     common.Cursor cursor = 2;
 }
@@ -133,11 +133,11 @@ service UserService {
     rpc currentUser(CurrentRequest) returns (CurrentResponse);
     rpc getUserById(GetUserByIdRequest) returns (GetUserByIdResponse);
 
-    rpc followUser(FollowUserRequest) returns (FollowUserResponse);
-    rpc unfollowUser(UnfollowUserRequest) returns (UnfollowUserResponse);
-    rpc followerList(UserFollowerRequest) returns (UserFollowerResponse);
-    rpc followingList(UserFollowingRequest) returns (UserFollowingResponse);
-    rpc followingDiaryList(UserFollowingDiaryRequest) returns (UserFollowingDiaryResponse);
+    rpc follow(FollowRequest) returns (FollowResponse);
+    rpc unfollow(UnfollowRequest) returns (UnfollowResponse);
+    rpc followerList(FollowerRequest) returns (FollowerResponse);
+    rpc followingList(FollowingRequest) returns (FollowingResponse);
+    rpc attendingList(AttendingRequest) returns (AttendingResponse);
 
     rpc changePassword(ChangePasswordRequest) returns (ChangePasswordResponse);
 

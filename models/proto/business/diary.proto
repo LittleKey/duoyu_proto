@@ -78,6 +78,16 @@ message AttenderResponse {
     repeated model.User users = 1;
 }
 
+message AttendingRequest {
+    string user_id = 1;
+    common.Cursor cursor = 2;
+}
+
+message AttendingResponse {
+    repeated model.Diary diaries = 1;
+    common.Cursor cursor = 2;
+}
+
 service DiaryService {
     rpc hotDiaries(HotRequest) returns (DiariesResponse);
     rpc recentDiaries(RecentRequest) returns (DiariesResponse);
@@ -87,6 +97,7 @@ service DiaryService {
     rpc attention(AttentionRequest) returns (AttentionResponse);
     rpc unattended(UnattendedRequest) returns (UnattendedRequest);
     rpc attender(AttenderRequest) returns (AttenderResponse);
+    rpc attendingList(AttendingRequest) returns (AttendingResponse);
 
     rpc likeDiary(LikeRequest) returns (LikeResponse);
     rpc unlikeDiary(UnlikeRequest) returns (UnlikeResponse);

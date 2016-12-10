@@ -75,17 +75,6 @@ message FollowingResponse {
     common.Cursor cursor = 2;
 }
 
-message AttendingRequest {
-    string diary_id = 1;
-    common.Cursor cursor = 2;
-}
-
-message AttendingResponse {
-    repeated model.Diary diaries = 1;
-    common.Cursor cursor = 2;
-}
-
-
 message ChangePasswordRequest {
     string email = 1;
     string email_verification_code = 2;
@@ -137,7 +126,6 @@ service UserService {
     rpc unfollow(UnfollowRequest) returns (UnfollowResponse);
     rpc followerList(FollowerRequest) returns (FollowerResponse);
     rpc followingList(FollowingRequest) returns (FollowingResponse);
-    rpc attendingList(AttendingRequest) returns (AttendingResponse);
 
     rpc changePassword(ChangePasswordRequest) returns (ChangePasswordResponse);
 

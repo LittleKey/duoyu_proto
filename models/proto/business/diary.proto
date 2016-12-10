@@ -76,6 +76,7 @@ message AttenderRequest {
 
 message AttenderResponse {
     repeated model.User users = 1;
+    common.Cursor cursor = 2;
 }
 
 message AttendingRequest {
@@ -96,7 +97,7 @@ service DiaryService {
 
     rpc attention(AttentionRequest) returns (AttentionResponse);
     rpc unattended(UnattendedRequest) returns (UnattendedRequest);
-    rpc attender(AttenderRequest) returns (AttenderResponse);
+    rpc attenderList(AttenderRequest) returns (AttenderResponse);
     rpc attendingList(AttendingRequest) returns (AttendingResponse);
 
     rpc likeDiary(LikeRequest) returns (LikeResponse);

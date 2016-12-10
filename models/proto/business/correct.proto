@@ -43,7 +43,7 @@ message CorrectResponse {
 }
 
 service CorrectService {
-    rpc userCorrects(CorrectsRequest) returns (CorrectsResponse);
+    rpc publishedCorrects(CorrectsRequest) returns (CorrectsResponse);
     rpc getCorrectsByUserId(GetCorrectsByUserIdRequest) returns (CorrectsResponse);
     rpc getCorrectsByDiaryId(GetCorrectsByDiaryIdRequest) returns (CorrectsResponse);
 

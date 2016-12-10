@@ -7,10 +7,6 @@ import "models/proto/model/model.proto";
 import "models/proto/common.proto";
 import "models/proto/business/public.proto";
 
-message HotRequest {
-    common.Cursor cursor = 1;
-}
-
 message RecentRequest {
     common.Cursor cursor = 1;
 }
@@ -90,7 +86,6 @@ message AttendingResponse {
 }
 
 service DiaryService {
-    rpc hotDiaries(HotRequest) returns (DiariesResponse);
     rpc recentDiaries(RecentRequest) returns (DiariesResponse);
     rpc publishedDiaries(PublishedRequest) returns (DiariesResponse);
     rpc getPublishedDiariesByUserId(GetPublishedByUserIdRequest) returns (DiariesResponse);

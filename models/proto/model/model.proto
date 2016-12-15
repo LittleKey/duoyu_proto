@@ -69,14 +69,15 @@ message Correct {
 
 message Comment {
     string comment_id = 1;
-    string quote_id = 2;
-    User author = 3;
-    string content = 4;
-    User quote_author = 5;
-    string quote = 6;
-    int32 date = 7;
-    int32 floor = 8;
-    int32 likes = 9;
+    string entire_id = 2;
+    string quote_id = 3;
+    User author = 4;
+    string content = 5;
+    User quote_author = 6;
+    string quote = 7;
+    int32 date = 8;
+    int32 floor = 9;
+    int32 likes = 10;
 }
 
 message Happening {
@@ -86,6 +87,8 @@ message Happening {
     string title = 4;
     string content = 5;
     Event event = 6;
+    int32 likes = 7;
+    int32 comments = 8;
     enum Event {
         LIKE_DIARY = 0;
         LIKE_CORRECT = 1;

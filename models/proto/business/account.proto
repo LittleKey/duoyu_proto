@@ -77,6 +77,8 @@ message ChangePasswordResponse {
     enum Errno {
         UNKNOWN = 0;
         INVALID_EMAIL_CODE = 1;
+        NOT_FOUND_EMAIL = 2;
+        SAME_AS_OLD_PASSWORD = 3;
     }
 }
 

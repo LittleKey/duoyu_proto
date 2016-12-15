@@ -65,9 +65,25 @@ message EmailVerifyResponse {
     }
 }
 
+message ChangePasswordRequest {
+    string email = 1;
+    string email_verification_code = 2;
+    common.PrehashedPassword password = 3;
+}
+
+message ChangePasswordResponse {
+    bool success = 1;
+    Errno errno = 2;
+    enum Errno {
+        UNKNOWN = 0;
+        INVALID_EMAIL_CODE = 1;
+    }
+}
+
 service AccountService {
     rpc emailLogin(LoginRequest) returns (LoginResponse);
     rpc logout(LogoutRequest) returns (LogoutResponse);
     rpc emailRegister(RegisterRequest) returns (RegisterResponse);
     rpc emailVerify(EmailVerifyRequest) returns (EmailVerifyResponse);
+    rpc changePassword(ChangePasswordRequest) returns (ChangePasswordResponse);
 }

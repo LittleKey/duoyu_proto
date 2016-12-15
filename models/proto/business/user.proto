@@ -88,21 +88,6 @@ message MakeFriendResponse {
     }
 }
 
-message ChangePasswordRequest {
-    string email = 1;
-    string email_verification_code = 2;
-    common.PrehashedPassword password = 3;
-}
-
-message ChangePasswordResponse {
-    bool success = 1;
-    Errno errno = 2;
-    enum Errno {
-        UNKNOWN = 0;
-        INVALID_EMAIL_CODE = 1;
-    }
-}
-
 message TimelineRequest {
     common.Cursor cursor = 1;
 }
@@ -141,8 +126,6 @@ service UserService {
     rpc followingList(FollowingRequest) returns (FollowingResponse);
 
     rpc makeFriend(MakeFriendRequest) returns (MakeFriendResponse);
-
-    rpc changePassword(ChangePasswordRequest) returns (ChangePasswordResponse);
 
     rpc UserTimeline(TimelineRequest) returns (TimelineResponse);
     rpc GetTimelineByUserId(GetTimelineByUserIdRequest) returns (TimelineResponse);

@@ -91,7 +91,7 @@ message Happening {
         LIKE_CORRECT = 1;
         PUBLISH_DIARY = 2;
         PUBLISH_CORRECT = 3;
-        FOLLOW_DIARY = 4;
+        ATTENTION_DIARY = 4;
     }
 }
 

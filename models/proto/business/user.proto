@@ -99,6 +99,7 @@ message GetTimelineByUserIdRequest {
 
 message TimelineResponse {
     repeated model.Happening happenings = 1;
+    common.Cursor cursor = 2;
 }
 
 message UploadImageRequest {

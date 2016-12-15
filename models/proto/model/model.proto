@@ -82,13 +82,10 @@ message Comment {
 
 message Happening {
     string happening_id = 1;
-    User user = 2;
-    int32 date = 3;
-    string title = 4;
-    string content = 5;
-    Event event = 6;
-    int32 likes = 7;
-    int32 comments = 8;
+    int32 date = 2;
+    string title = 3;
+    Event event = 4;
+    string article_id = 5;
     enum Event {
         LIKE_DIARY = 0;
         LIKE_CORRECT = 1;

@@ -14,6 +14,26 @@ message CurrentUserNotificationResponse {
     repeated model.Notification notifications = 1;
 }
 
+message MarkAsReadNotificationRequest {
+    repeated model.Notification.Event events = 1;
+}
+
+message MarkAsReadNotificationResponse {
+    bool success = 1;
+    Errno errno = 2;
+    enum Errno {
+        UNKNOWN = 0;
+    }
+}
+
+message UnreadNotificationRequest {
+}
+
+message UnreadNotificationResponse {
+    bool success = 1;
+    int32 unread_num = 2;
+}
+
 service NotifyService {
     rpc currentUserNotification(CurrentUserNotificationRequest) returns (CurrentUserNotificationResponse);
 }

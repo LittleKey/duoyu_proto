@@ -96,9 +96,9 @@ message Happening {
 }
 
 message Notification {
-    string notification_id = 1;
-    User user = 2;
-    int32 date = 3;
+    User user = 1;
+    int32 date = 2;
+    string which = 3;
     string content = 4;
     Event event = 5;
     enum Event {
@@ -108,9 +108,7 @@ message Notification {
         COMMENT_MY_DIARY = 3;
         COMMENT_MY_CORRECT = 4;
         COMMENT_MY_COMMENT = 5;
-        CORRECT_MY_DIARY = 6;
-        CORRECT_FOLLOW_DIARY = 7;
-        FOLLOW_MY_DIARY = 8;
-        FOLLOW_ME = 9;
+        CORRECT_ATTENTION_DIARY = 6;
+        FOLLOW_ME = 7;
     }
 }

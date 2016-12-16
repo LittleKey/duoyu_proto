@@ -7,11 +7,13 @@ import "models/proto/model/model.proto";
 import "models/proto/common.proto";
 
 message CurrentUserNotificationRequest {
-    common.Cursor cursor = 1;
+    repeated model.Notification.Event events = 1;
+    common.Cursor cursor = 2;
 }
 
 message CurrentUserNotificationResponse {
     repeated model.Notification notifications = 1;
+    common.Cursor cursor = 2;
 }
 
 message MarkAsReadNotificationRequest {
@@ -32,8 +34,14 @@ message UnreadNotificationRequest {
 message UnreadNotificationResponse {
     bool success = 1;
     int32 unread_num = 2;
+    Errno errno = 3;
+    enum Errno {
+        UNKNOWN = 0;
+    }
 }
 
 service NotifyService {
     rpc currentUserNotification(CurrentUserNotificationRequest) returns (CurrentUserNotificationResponse);
+    rpc markAsReadNotification(MarkAsReadNotificationRequest) returns (MarkAsReadNotificationResponse);
+    rpc unreadNotification(UnreadNotificationRequest) returns (UnreadNotificationResponse);
 }

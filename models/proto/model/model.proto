@@ -56,6 +56,8 @@ message Diary {
     int32 date = 6;
     int32 likes = 7;
     int32 followers = 8;
+    int32 attentions = 9;
+    int32 corrects = 10;
 }
 
 message Correct {
@@ -99,16 +101,20 @@ message Notification {
     User user = 1;
     int32 date = 2;
     string which = 3;
-    string content = 4;
+    Type which_type = 4;
     Event event = 5;
+    bool unread = 6;
+    string title = 7;
     enum Event {
-        LIKE_MY_DIARY = 0;
-        LIKE_MY_CORRECT = 1;
-        LIKE_MY_COMMENT = 2;
-        COMMENT_MY_DIARY = 3;
-        COMMENT_MY_CORRECT = 4;
-        COMMENT_MY_COMMENT = 5;
-        CORRECT_ATTENTION_DIARY = 6;
-        FOLLOW_ME = 7;
+        LIKE_MY_ARTICLE = 0;
+        COMMENT_MY_ARTICLE = 1;
+        CORRECT_ATTENTION_DIARY = 2;
+        FOLLOW_ME = 3;
+        PUBLISH_DIARY = 4;
+    }
+    enum Type {
+        DIARY = 0;
+        CORRECT = 1;
+        COMMENT = 2;
     }
 }

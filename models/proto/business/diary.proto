@@ -7,6 +7,11 @@ import "models/proto/model/model.proto";
 import "models/proto/common.proto";
 import "models/proto/business/public.proto";
 
+message LastDiariesRequest {
+    int64 date = 1;
+    common.Cursor cursor = 2;
+}
+
 message FollowingUserPublishedDiariesRequest {
     common.Cursor cursor = 1;
 }
@@ -90,6 +95,7 @@ message AttendingResponse {
 }
 
 service DiaryService {
+    rpc lastDiaries(LastDiariesRequest) returns (DiariesResponse);
     rpc followingUserPublishedDiaries(FollowingUserPublishedDiariesRequest) returns (DiariesResponse);
     rpc recentDiaries(RecentRequest) returns (DiariesResponse);
     rpc publishedDiaries(PublishedRequest) returns (DiariesResponse);

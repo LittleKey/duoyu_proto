@@ -50,7 +50,7 @@ message Diary {
     User author = 3;
     Language language = 4;
     string content = 5;
-    int32 date = 6;
+    int64 date = 6;
     int32 likes = 7;
     int32 followers = 8;
     int32 attentions = 9;
@@ -62,8 +62,8 @@ message Correct {
     User author = 2;
     Diary diary = 3;
     string content = 4;
-    int32 date = 5;
-    int32 last_edit_date = 6;
+    int64 date = 5;
+    int64 last_edit_date = 6;
     int32 likes = 7;
 }
 
@@ -75,14 +75,14 @@ message Comment {
     string content = 5;
     User quote_author = 6;
     string quote = 7;
-    int32 date = 8;
+    int64 date = 8;
     int32 floor = 9;
     int32 likes = 10;
 }
 
 message Happening {
     string article_id = 1;
-    int32 date = 2;
+    int64 date = 2;
     string title = 3;
     Event event = 4;
     enum Event {
@@ -96,7 +96,7 @@ message Happening {
 
 message Notification {
     User user = 1;
-    int32 date = 2;
+    int64 date = 2;
     string which = 3;
     Type which_type = 4;
     Event event = 5;

@@ -3,9 +3,6 @@ syntax = "proto3";
 package model;
 option java_package = "online.duoyu.sparkle.model.proto";
 
-message Model {
-}
-
 enum Language {
     CHINESE  = 0;
     ENGLISH = 1;

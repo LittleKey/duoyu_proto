@@ -55,6 +55,7 @@ message Diary {
     int32 followers = 8;
     int32 attentions = 9;
     int32 corrects = 10;
+    int64 diary_date = 11;
 }
 
 message Correct {

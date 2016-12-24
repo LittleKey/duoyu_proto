@@ -15,6 +15,7 @@ message LoginResponse {
     bool success = 1;
     Errno errno = 2;
     model.User user = 3;
+    string token = 4;
     enum Errno {
         UNKNOWN = 0;
         INVALID_CREDENTIAL = 1;

@@ -19,3 +19,47 @@ message Cursor {
 
 message NullMessage {
 }
+
+message Action {
+    Type type = 1;
+    string clazz = 2;
+    string url = 3;
+
+    enum Type {
+        UNKNOWN = 0;
+        JUMP = 1;
+        JUMP_WITH_LOGIN = 2;
+        EVENT = 3;
+        LOGOUT = 4;
+        LIKED = 5;
+    }
+}
+
+message Count {
+    float rating = 1;
+    uint32 selected_num = 2;
+    uint32 likes = 3;
+    uint32 pages = 4;
+    uint32 rating_count = 5;
+    uint32 number = 6;
+    uint32 width = 7;
+    uint32 height = 8;
+    int32 x_offset = 9;
+    int32 score = 10;
+    float progress = 11;
+}
+
+message Flag {
+    bool is_admin = 1;
+    bool is_me = 2;
+    bool is_winner = 3;
+    bool is_selected = 4;
+    bool can_move = 5;
+    bool loading = 6;
+    bool is_ready = 7;
+    bool in_room = 8;
+    bool is_matching = 9;
+    bool is_liked = 10;
+    bool is_thumbnail = 11;
+    bool is_completed = 12;
+}

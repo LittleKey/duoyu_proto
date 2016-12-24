@@ -40,5 +40,6 @@ message Model {
         UNSUPPORTED = 0;
         DATA = 1;
         HEADER = 2;
+        ITEM_DIARY = 3;
     }
 }

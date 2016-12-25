@@ -42,6 +42,7 @@ message Model {
         COMMENT = 4;
         HAPPENING = 5;
         NOTIFICATION = 6;
+        DATE = 7;
     }
 
     enum Template {
@@ -49,5 +50,6 @@ message Model {
         DATA = 1;
         HEADER = 2;
         ITEM_DIARY = 3;
+        ITEM_MONTH = 4;
     }
 }

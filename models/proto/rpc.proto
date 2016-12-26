@@ -17,5 +17,6 @@ message RPCResponse {
     enum Reason {
         OK = 0;
         BAD_REQUEST = 10;
+        UNAUTHORIZED = 20;
     }
 }

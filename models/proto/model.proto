@@ -51,5 +51,6 @@ message Model {
         HEADER = 2;
         ITEM_DIARY = 3;
         ITEM_MONTH = 4;
+        ITEM_DIARY_WITH_MONTH = 5;
     }
 }

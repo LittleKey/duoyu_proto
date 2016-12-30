@@ -62,7 +62,7 @@ message Correct {
     string correct_id = 1;
     User author = 2;
     Diary diary = 3;
-    string content = 4;
+    repeated string content = 4;
     int64 date = 5;
     int64 last_edit_date = 6;
     int32 likes = 7;

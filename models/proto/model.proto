@@ -33,6 +33,7 @@ message Model {
     common.Count count = 24;
     string week = 25;
     string email = 26;
+    repeated string content = 27;
 
     enum Type {
         NONE = 0;

@@ -52,7 +52,7 @@ message Diary {
     string content = 5;
     int64 date = 6;
     int32 likes = 7;
-    int32 followers = 8;
+    int32 comments = 8;
     int32 attentions = 9;
     int32 corrects = 10;
     int64 diary_date = 11;
@@ -66,6 +66,7 @@ message Correct {
     int64 date = 5;
     int64 last_edit_date = 6;
     int32 likes = 7;
+    int32 comments = 8;
 }
 
 message Comment {

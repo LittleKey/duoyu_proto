@@ -18,5 +18,6 @@ message RPCResponse {
         OK = 0;
         BAD_REQUEST = 10;
         UNAUTHORIZED = 20;
+        NOT_MODIFIED = 30;
     }
 }

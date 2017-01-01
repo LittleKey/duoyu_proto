@@ -33,6 +33,8 @@ message Action {
         LOGOUT = 4;
         LIKED = 5;
         UPDATE_MONTH = 6;
+        FOLLOW = 7;
+        ATTENTION = 8;
     }
 }
 
@@ -70,4 +72,6 @@ message Flag {
     bool is_liked = 10;
     bool is_thumbnail = 11;
     bool is_completed = 12;
+    bool is_attending = 13;
+    bool is_corrected = 14;
 }

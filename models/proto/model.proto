@@ -53,5 +53,7 @@ message Model {
         ITEM_DIARY = 3;
         ITEM_MONTH = 4;
         ITEM_DIARY_WITH_MONTH = 5;
+        ITEM_EDIT_CORRECT_HEADER = 6;
+        ITEM_CORRECT_SENTENCE = 7;
     }
 }

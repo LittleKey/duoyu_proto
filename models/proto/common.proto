@@ -48,6 +48,13 @@ message Count {
     int32 x_offset = 9;
     int32 score = 10;
     float progress = 11;
+    int32 position = 12;
+    int32 diaries = 13;
+    int32 corrects = 14;
+    int32 comments = 15;
+    int32 attentions = 16;
+    int32 followers = 17;
+    int32 followings = 18;
 }
 
 message Flag {

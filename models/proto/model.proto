@@ -55,11 +55,12 @@ message Model {
         ITEM_DIARY = 3;
         ITEM_MONTH = 4;
         ITEM_DIARY_WITH_MONTH = 5;
-        ITEM_EDIT_CORRECT_HEADER = 6;
+        ITEM_DIVIDER_HEADER = 6;
         ITEM_CORRECT_SENTENCE = 7;
         ITEM_CORRECT = 8;
         ITEM_COMMENT = 9;
         ITEM_USER = 10;
         ITEM_CORRECT_WITH_ORIGIN_CONTENT_SENTENCE = 11;
+        ITEM_ORIGIN_SENTENCE = 12;
     }
 }

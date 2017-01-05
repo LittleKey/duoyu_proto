@@ -62,5 +62,6 @@ message Model {
         ITEM_USER = 10;
         ITEM_CORRECT_WITH_ORIGIN_CONTENT_SENTENCE = 11;
         ITEM_ORIGIN_SENTENCE = 12;
+        ITEM_DIARY_TITLE = 13;
     }
 }

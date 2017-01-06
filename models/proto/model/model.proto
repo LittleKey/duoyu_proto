@@ -102,7 +102,7 @@ message Happening {
 }
 
 message Notification {
-    User user = 1;
+    repeated User users = 1;
     int64 date = 2;
     string which = 3;
     Type which_type = 4;

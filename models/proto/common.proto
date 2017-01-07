@@ -76,4 +76,5 @@ message Flag {
     bool is_completed = 12;
     bool is_attending = 13;
     bool is_corrected = 14;
+    bool unread = 15;
 }

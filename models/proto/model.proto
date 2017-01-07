@@ -36,6 +36,7 @@ message Model {
     repeated string content = 27;
     string correct_sentence = 28;
     string origin_sentence = 29;
+    int32 event = 30;
 
     enum Type {
         NONE = 0;
@@ -63,5 +64,6 @@ message Model {
         ITEM_CORRECT_WITH_ORIGIN_CONTENT_SENTENCE = 11;
         ITEM_ORIGIN_SENTENCE = 12;
         ITEM_DIARY_TITLE = 13;
+        ITEM_NOTIFICATION = 14;
     }
 }

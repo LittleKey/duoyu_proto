@@ -93,11 +93,12 @@ message Happening {
     string title = 3;
     Event event = 4;
     enum Event {
-        LIKE_DIARY = 0;
-        LIKE_CORRECT = 1;
-        PUBLISH_DIARY = 2;
-        PUBLISH_CORRECT = 3;
-        ATTENTION_DIARY = 4;
+        UNKNOWN_EVENT = 0;
+        LIKE_DIARY = 1;
+        LIKE_CORRECT = 2;
+        PUBLISH_DIARY = 3;
+        PUBLISH_CORRECT = 4;
+        ATTENTION_DIARY = 5;
     }
 }
 
@@ -110,15 +111,18 @@ message Notification {
     bool unread = 6;
     string title = 7;
     enum Event {
-        LIKE_MY_ARTICLE = 0;
-        COMMENT_MY_ARTICLE = 1;
-        CORRECT_ATTENTION_DIARY = 2;
-        FOLLOW_ME = 3;
-        PUBLISH_DIARY = 4;
+        UNKNOWN_EVENT = 0;
+        LIKE_MY_ARTICLE = 1;
+        COMMENT_MY_ARTICLE = 2;
+        CORRECT_ATTENTION_DIARY = 3;
+        FOLLOW_ME = 4;
+        PUBLISH_DIARY = 5;
     }
     enum Type {
-        DIARY = 0;
-        CORRECT = 1;
-        COMMENT = 2;
+        UNKNOWN_TYPE = 0;
+        DIARY = 1;
+        CORRECT = 2;
+        COMMENT = 3;
+        USER = 4;
     }
 }

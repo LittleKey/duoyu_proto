@@ -77,4 +77,6 @@ message Flag {
     bool is_attending = 13;
     bool is_corrected = 14;
     bool unread = 15;
+    bool is_follower = 16;
+    bool is_following = 17;
 }

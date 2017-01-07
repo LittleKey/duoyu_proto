@@ -65,5 +65,6 @@ message Model {
         ITEM_ORIGIN_SENTENCE = 12;
         ITEM_DIARY_TITLE = 13;
         ITEM_NOTIFICATION = 14;
+        ITEM_FOLLOWER = 15;
     }
 }

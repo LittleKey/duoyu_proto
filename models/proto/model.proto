@@ -66,5 +66,7 @@ message Model {
         ITEM_DIARY_TITLE = 13;
         ITEM_NOTIFICATION = 14;
         ITEM_FOLLOWER = 15;
+        ITEM_HAPPENING = 16;
+        ITEM_CORRECT_WITH_DIARY = 17;
     }
 }

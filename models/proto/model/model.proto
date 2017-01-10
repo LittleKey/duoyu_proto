@@ -110,6 +110,7 @@ message Notification {
     Event event = 5;
     bool unread = 6;
     string title = 7;
+    string jump_id = 8;
     enum Event {
         UNKNOWN_EVENT = 0;
         LIKE_MY_ARTICLE = 1;

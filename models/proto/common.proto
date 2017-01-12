@@ -13,7 +13,8 @@ message Cursor {
     int32 offset = 2;
     int32 page = 3;
     int32 limit = 4;
-    bool has_more = 5;
+    int32 amount = 5;
+    bool has_more = 6;
 }
 
 message NullMessage {

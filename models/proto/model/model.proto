@@ -26,6 +26,7 @@ message User {
     Relationship relationship = 14;
     int32 number = 15;
     repeated Happening happenings = 16;
+    int32 attending_num = 17;
     enum Relationship {
         NOT_FOLLOW = 0;
         FOLLOWING = 1;

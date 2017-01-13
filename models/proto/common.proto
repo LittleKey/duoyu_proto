@@ -59,6 +59,7 @@ message Count {
     int32 followers = 17;
     int32 followings = 18;
     int32 floor = 19;
+    int32 limit = 20;
 }
 
 message Flag {

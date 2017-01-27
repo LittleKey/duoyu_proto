@@ -47,6 +47,7 @@ message Model {
         HAPPENING = 5;
         NOTIFICATION = 6;
         DATE = 7;
+        LANGUAGE = 8;
     }
 
     enum Template {
@@ -68,5 +69,6 @@ message Model {
         ITEM_FOLLOWER = 15;
         ITEM_HAPPENING = 16;
         ITEM_CORRECT_WITH_DIARY = 17;
+        ITEM_LANGUAGE = 18;
     }
 }
